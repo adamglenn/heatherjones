@@ -4,6 +4,19 @@ backend:
 media_folder: assets/img
 public_folder: /img
 collections:
+  - name: 'paintings'
+    label: 'Paintings'
+    folder: 'content/paintings'
+    create: true
+    slug: '{{ slug }}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Image', name: 'featured_image', widget: 'image' }
+      - { label: 'Image Alt Text', name: 'featured_image_alt', widget: 'string' }
+      - { label: 'Description', name: 'description', widget: 'text' }
+      - { label: 'Price', name: 'price', widget: 'number', step: '.01' }
   - name: 'blog'
     label: 'Blog'
     folder: "content/posts"
