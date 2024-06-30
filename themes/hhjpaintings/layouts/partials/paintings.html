@@ -12,8 +12,29 @@
           {{ with .Params.featured_image }}
             {{ $image = resources.Get . }}
             {{ $image }}
-            <img load="lazy" class="w-100" src='{{ ( $image.Fit "960x640 Center" ).RelPermalink }}' />
+            <img load="lazy" data-bs-toggle="modal" data-bs-target="#exampleModal" class="w-100" src='{{ ( $image.Fit "960x640 Center" ).RelPermalink }}' />
           {{ end }}
+          <button class="btn btn-outline-dark snipcart-add-item"
+            data-item-id="starry-night"
+            data-item-price="{{ .Params.price }}"
+            data-item-description="{{ .Description }}"
+            data-item-image="{{ ( $image.Fit "200x200 Center" ).RelPermalink }}"
+            data-item-name="{{ .Title }}">
+            Add to cart
+          </button>
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">{{ .Title }}</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <img load="lazy" class="w-100" src='{{ ( $image.Fit "2000x2000 Center" ).RelPermalink }}' />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       {{ end }}
     </div>
