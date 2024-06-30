@@ -1,0 +1,393 @@
+backend:
+  name: git-gateway
+  branch: main # Branch to update (optional; defaults to master)
+media_folder: assets/img
+public_folder: /img
+collections:
+  - label: "Landing Pages"
+    name: "sitePages"
+    create: false
+    editor:
+      preview: false
+    files:
+      - label: "Home Page"
+        name: "home"
+        file: "data/homepage.yml"
+        editor:
+          preview: false
+        fields:
+          - label: "Hero"
+            name: "hero"
+            widget: object
+            collapsed: true
+            fields:
+              - label: "Align"
+                name: "align"
+                widget: "select"
+                options: ["Left", "Right"]
+                default: ["Right"]
+              - { label: "Heading", name: 'heading', widget: 'string' }
+              - { label: "Lede", name: 'lede', widget: 'text' }
+              - label: "Call to Action"
+                name: "cta"
+                widget: list
+                required: false
+                fields:
+                  - { label: "Button Text", name: "button_text", widget: "string" }
+                  - { label: "URL", name: "url", widget: "string" }
+          - label: "Address and Hours"
+            name: "hours"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "title", name: "title", widget: "string" }
+              - label: "Address"
+                name: "address"
+                widget: list
+                fields:
+                  - { label: "Address Line", name: "address_line", widget: "string" }
+              - label: "Map Link"
+                name: "map_link"
+                widget: "string"
+              - label: "Hours"
+                name: "hours"
+                widget: list
+                fields:
+                  - { label: "Hours Line", name: "hours_line", widget: "string" }
+              - label: "Special Hours"
+                name: "special_hours"
+                widget: "object"
+                collapsed: true
+                required: false
+                fields:
+                  - { label: "Show", name: "show", widget: "boolean" }
+                  - { label: "Message", name: "message", widget: "text" }
+          - label: "Happy Hour Feature"
+            name: "happyHour"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Heading", name: 'heading', widget: 'string' }
+              - label: "Hours"
+                name: "hours"
+                widget: list
+                fields:
+                  - { label: "Days", name: "days", widget: "string" }
+                  - { label: "Hours", name: "hours", widget: "string" }
+                required: false
+              - { label: "Description", name: "description", widget: "string", required: false }
+              - label: "Call to Action"
+                name: "cta"
+                widget: object
+                fields:
+                  - { label: "Button Text", name: "buttonText", widget: "string", required: false }
+                  - label: "Link"
+                    name: "link"
+                    widget: "string"
+                    required: false
+                required: false
+          - label: "Brunch Feature"
+            name: "brunch"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Heading", name: 'heading', widget: 'string' }
+              - label: "Hours"
+                name: "hours"
+                widget: list
+                fields:
+                  - { label: "Days", name: "days", widget: "string" }
+                  - { label: "Hours", name: "hours", widget: "string" }
+                required: false
+              - { label: "Description", name: "description", widget: "string", required: false }
+              - label: "Call to Action"
+                name: "cta"
+                widget: object
+                fields:
+                  - { label: "Button Text", name: "buttonText", widget: "string", required: false }
+                  - label: "Link"
+                    name: "link"
+                    widget: "string"
+                    required: false
+                required: false
+          - label: "Dinner Feature"
+            name: "dinner"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Heading", name: 'heading', widget: 'string' }
+              - label: "Hours"
+                name: "hours"
+                widget: list
+                fields:
+                  - { label: "Days", name: "days", widget: "string" }
+                  - { label: "Hours", name: "hours", widget: "string" }
+                required: false
+              - { label: "Description", name: "description", widget: "string", required: false }
+              - label: "Call to Action"
+                name: "cta"
+                widget: object
+                fields:
+                  - { label: "Button Text", name: "buttonText", widget: "string", required: false }
+                  - label: "Link"
+                    name: "link"
+                    widget: "string"
+                    required: false
+                required: false
+          - label: "Specials"
+            name: "specials"
+            widget: "object"
+            collapsed: true
+            fields:
+              - label: "Heading"
+                name: "heading"
+                widget: "string"
+              - label: "Details"
+                name: "details"
+                widget: "list"
+                fields:
+                  - { label: "Line", name: "line", widget: "string" }
+              - label: "Photo"
+                name: "photo"
+                widget: image
+          - label: "Products"
+            name: "products"
+            widget: object
+            collapsed: true
+            fields:
+              - label: "Title"
+                name: "title"
+              - label: "Description"
+                name: "description"
+              - label: "Products"
+                name: "products"
+                widget: list
+                fields:
+                  - label: "Title"
+                    name: "title"
+                    widget: "string"
+                  - label: "Description"
+                    name: "description"
+                    widget: "text"
+                  - label: "Photo"
+                    name: "photo"
+                    widget: "image"
+                  - label: "Photo Alt Text"
+                    name: "photoAltText"
+                    widget: "string"
+                    required: false
+      - label: "Food"
+        name: "Food"
+        file: "data/food.yml"
+        editor:
+          preview: false
+        fields:
+          - label: "Menus"
+            name: "menus"
+            widget: "list"
+            fields:
+              - label: "Menu Name"
+                name: "menu_name"
+                widget: "string"
+              - label: "Menu Description"
+                name: "description"
+                widget: "text"
+                required: false
+              - label: "Menu Sections"
+                name: "menu_sections"
+                widget: "list"
+                fields:
+                  - label: "Section Title"
+                    name: "title"
+                    widget: "string"
+                  - label: "Section Description"
+                    name: "description"
+                    widget: "text"
+                    required: false
+                  - label: "Items"
+                    name: "items"
+                    widget: "list"
+                    collapsed: true
+                    fields:
+                      - label: "Title"
+                        name: "title"
+                        widget: "string"
+                      - label: "Feature on Home Page"
+                        name: "feature"
+                        widget: "boolean"
+                        required: false
+                      - label: "Description"
+                        name: "description"
+                        widget: "text"
+                        required: false
+                      - label: "Designation"
+                        name: "designation"
+                        widget: "select"
+                        multiple: true
+                        required: false
+                        options:
+                          - { label: "Gluten Free", value: "GF" }
+                          - { label: "Vegetarian", value: "V" }
+                          - { label: "Vegan", value: "VE" }
+                      - label: "Options"
+                        name: "options"
+                        widget: "list"
+                        fields:
+                          - { label: Size, name: size, widget: select, options: ["8oz.", "16oz.", "20oz.", "24oz."], required: false }
+                          - { label: Price, name: price, widget: string }
+                      - label: Photo
+                        name: photo
+                        widget: image
+                        required: false
+      - label: "Drinks"
+        name: "drinks"
+        file: "data/drinks.yml"
+        editor:
+          preview: false
+        fields:
+          - label: "Menus"
+            name: "menus"
+            widget: "list"
+            fields:
+              - label: "Menu Name"
+                name: "menu_name"
+                widget: "string"
+              - label: "Menu Description"
+                name: "description"
+                widget: "text"
+                required: false
+              - label: "Menu Sections"
+                name: "menu_sections"
+                widget: "list"
+                fields:
+                  - label: "Section Title"
+                    name: "title"
+                    widget: "string"
+                  - label: "Section Description"
+                    name: "description"
+                    widget: "text"
+                    required: false
+                  - label: "Items"
+                    name: "items"
+                    widget: "list"
+                    collapsed: true
+                    fields:
+                      - label: "Title"
+                        name: "title"
+                        widget: "string"
+                      - label: "Feature on Home Page"
+                        name: "feature"
+                        widget: "boolean"
+                        required: false
+                      - label: "Description"
+                        name: "description"
+                        widget: "text"
+                        required: false
+                      # - label: "Designation"
+                      #   name: "designation"
+                      #   widget: "select"
+                      #   multiple: true
+                      #   required: false
+                      #   options:
+                      #     - { label: "Gluten Free", value: "GF" }
+                      #     - { label: "Vegetarian", value: "V" }
+                      #     - { label: "Vegan", value: "VE" }
+                      - label: "Options"
+                        name: "options"
+                        widget: "list"
+                        fields:
+                          - { label: Size, name: size, widget: select, options: ["8oz.", "16oz.", "20oz.", "24oz.", "Glass"], required: false }
+                          - { label: Price, name: price, widget: string }
+                      - label: Photo
+                        name: photo
+                        widget: image
+                        required: false
+      - label: "Catering"
+        name: "catering"
+        file: "data/catering.yml"
+        editor:
+          preview: false
+        fields:
+          - label: "Menus"
+            name: "menus"
+            widget: "list"
+            fields:
+              - label: "Menu Name"
+                name: "menu_name"
+                widget: "string"
+              - label: "Menu Description"
+                name: "description"
+                widget: "text"
+                required: false
+              - label: "Menu Sections"
+                name: "menu_sections"
+                widget: "list"
+                fields:
+                  - label: "Section Title"
+                    name: "title"
+                    widget: "string"
+                  - label: "Section Description"
+                    name: "description"
+                    widget: "text"
+                    required: false
+                  - label: "Items"
+                    name: "items"
+                    widget: "list"
+                    collapsed: true
+                    fields:
+                      - label: "Title"
+                        name: "title"
+                        widget: "string"
+                      - label: "Feature on Home Page"
+                        name: "feature"
+                        widget: "boolean"
+                        required: false
+                      - label: "Description"
+                        name: "description"
+                        widget: "text"
+                        required: false
+                      - label: "Designation"
+                        name: "designation"
+                        widget: "select"
+                        multiple: true
+                        required: false
+                        options:
+                          - { label: "Gluten Free", value: "GF" }
+                          - { label: "Vegetarian", value: "V" }
+                          - { label: "Vegan", value: "VE" }
+                      - label: "Options"
+                        name: "options"
+                        widget: "list"
+                        fields:
+                          - { label: Size, name: size, widget: select, options: ["8oz.", "16oz.", "20oz.", "24oz."], required: false }
+                          - { label: Price, name: price, widget: string }
+                      - label: Photo
+                        name: photo
+                        widget: image
+                        required: false
+  - name: 'blog'
+    label: 'Blog'
+    folder: "content/posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+  # - label: "Components"
+  #   name: "components"
+  #   fields:
+  #     - label: "Featured Products"
+  #       name: "featured_products"
+  #       fields:
+  #         - label: "Heading"
+  #           name: "heading"
+  #           widget: "string"
+  #         - label: "Body"
+  #           name: "body"
+  #           widget: "markdown"
+  #     - label: "Featured Dishes"
+  #       name: "featured_dishes"

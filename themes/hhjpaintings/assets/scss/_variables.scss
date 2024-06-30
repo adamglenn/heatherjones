@@ -1,0 +1,84 @@
+// Typography
+//==================================================
+$monograph-text-regular: 'Monograf-Text-Regular', 'Helvetica CY', Arial, 'Lucida Grande', sans-serif !default;
+$monograph-text-bold: 'Monograf-Text-Bold', 'Helvetica CY', Arial, 'Lucida Grande', sans-serif !default;
+$flapjack-regular: 'OTRFlapjack-Regular', 'Helvetica CY', Arial, 'Lucida Grande', sans-serif !default;
+
+// Color
+//==================================================
+
+$blue:    #0d6efd;
+$indigo:  #6610f2;
+$purple:  #6f42c1;
+$pink:    #d63384;
+$red:     #dc3545;
+$orange:  #fd7e14;
+$yellow:  #ffc107;
+$green:   #198754;
+$teal:    #20c997;
+$cyan:    #0dcaf0;
+
+$white:    #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black:    #302828;
+
+$primary:       $blue;
+$secondary:     $gray-600;
+$success:       $green;
+$info:          $cyan;
+$warning:       $yellow;
+$danger:        $red;
+$light:         $gray-100;
+$dark:          $gray-900;
+
+// Primary
+$cc-white-chocolate: #FDF7F0;
+$cc-white-chocolate-tint: #f6f1ea;
+
+$cc-accent--frose: #B71F3A;
+$cc-accent--pink: #E56E89; // #F05689 will be final
+$cc-accent--mojito: #72D679;
+$cc-accent--manhattan: #EE2B28;
+$cc-accent--momosa: #FFD13A;
+
+$cc-neutral--vino: #4D1021;
+$cc-neutral--dark-chocolate: #341716;
+$cc-neutral--cohiba: #723B28;
+$cc-neutral--mocha: #f5ebd9;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
+  "white": $white,
+  "cc-white-chocolate": $cc-white-chocolate,
+  "cc-white-chocolate-tint": $cc-white-chocolate-tint,
+  "cc-accent--frose": $cc-accent--frose,
+  "cc-accent--pink": $cc-accent--pink,
+  "cc-accent--mojito": $cc-accent--mojito,
+  "cc-accent--manhattan": $cc-accent--manhattan,
+  "cc-accent--momosa": $cc-accent--momosa,
+  "cc-neutral--vino": $cc-neutral--vino,
+  "cc-neutral--dark-chocolate": $cc-neutral--dark-chocolate,
+  "cc-neutral--mocha": $cc-neutral--mocha
+);
+
+$btn-border-radius: 0;
+$btn-border-radius-sm: 0;
+$btn-border-radius-lg: 0;
+$btn-border-width: 2px;
+
+$enable-negative-margins: true;

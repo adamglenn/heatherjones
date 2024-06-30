@@ -1,0 +1,21 @@
+{{ $pages := where site.RegularPages "Type" "paintings" }}
+{{ $image := "" }}
+{{ $linkToCover := "" }}
+{{ $src := "" }}
+<div class="py-5">
+  <div class="container">
+    <div class="row" data-masonry='{"percentPosition": true }'>
+      {{ range $pages }}
+        <div class="col-lg-6 col-xl-4">
+          {{ .Title }}
+          {{ .Description }}
+          {{ with .Params.featured_image }}
+            {{ $image = resources.Get . }}
+            {{ $image }}
+            <img load="lazy" class="w-100" src='{{ ( $image.Fit "960x640 Center" ).RelPermalink }}' />
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</div>

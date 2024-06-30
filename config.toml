@@ -1,0 +1,4 @@
+baseURL = 'https://hhjart.netlify.app/'
+languageCode = 'en-us'
+title = 'HHJ Art'
+theme = 'hhjpaintings'
