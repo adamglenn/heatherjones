@@ -32,7 +32,10 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  <img load="lazy" class="w-100" src='{{ ( $image.Fit "2000x2000 Center" ).RelPermalink }}' />
+                  {{ with .Params.featured_image }}
+                    {{ $image = resources.Get . }}
+                    <img load="lazy" class="w-100" src='{{ ( $image.Fit "2000x2000 Center" ).RelPermalink }}' />
+                  {{ end }}
                 </div>
               </div>
             </div>
