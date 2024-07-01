@@ -1,14 +1,14 @@
 {
   "name": "hhjpaintings",
   "version": "0.0.1",
-  "description": "Theme for painting G\gallery site",
+  "description": "Theme for painting Gallery site",
   "main": "gulpfile.js",
   "scripts": {
     "prepare": "gulp moveJsFiles"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/adamglenn/thecupcakerie"
+    "url": "https://github.com/adamglenn/heatherjones"
   },
   "author": "Adam Glenn <adam.glenn@gmail.com>",
   "license": "MIT",

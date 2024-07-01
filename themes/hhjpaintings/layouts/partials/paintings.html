@@ -4,23 +4,20 @@
 {{ $src := "" }}
 <div class="py-5">
   <div class="container">
-    <div class="row" data-masonry='{"percentPosition": true }'>
+    <div class="row gx-4" data-masonry='{"percentPosition": true }'>
       {{ range $pages }}
-        <div class="col-lg-6 col-xl-4">
-          {{ .Title }}
-          {{ .Description }}
+        <div class="col-lg-6 col-xl-4 mb-4">
           {{ with .Params.featured_image }}
             {{ $image = resources.Get . }}
-            {{ $image }}
-            <img load="lazy" data-bs-toggle="modal" data-bs-target="#exampleModal" class="w-100" src='{{ ( $image.Fit "960x640 Center" ).RelPermalink }}' />
+            <img load="lazy" data-bs-toggle="modal" data-bs-target="#exampleModal" class="w-100 mb-2" src='{{ ( $image.Fit "960x640 Center" ).RelPermalink }}' />
           {{ end }}
-          <button class="btn btn-outline-dark snipcart-add-item"
+          <button class="btn btn-outline-dark btn-sm snipcart-add-item"
             data-item-id="{{ .Params.slug }}"
             data-item-price="{{ .Params.price }}"
             data-item-description="{{ .Description }}"
             data-item-image="{{ ( $image.Fit "200x200 Center" ).RelPermalink }}"
             data-item-name="{{ .Title }}">
-            Add to cart
+            <span class="fas fa-plus"></span> Add to cart
           </button>
           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-xl">
