@@ -13,7 +13,6 @@ collections:
       preview: false
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'ID', name: 'slug', widget: 'string' }
       - { label: 'Image', name: 'featured_image', widget: 'image' }
       - { label: 'Image Alt Text', name: 'featured_image_alt', widget: 'text' }
       - { label: 'Description', name: 'description', widget: 'text' }
