@@ -8,7 +8,7 @@
     <div class="row gx-4" data-masonry='{"percentPosition": true }'>
       {{ range $pages }}
         <div class="col-lg-6 col-xl-4 mb-4">
-          {{ $slug = .Params.slug }}
+          {{ $slug = .Title | urlize }}
           {{ with .Params.featured_image }}
             {{ $image = resources.Get . }}
             <img load="lazy" data-bs-toggle="modal" data-bs-target="#{{ $slug }}-modal" class="w-100 mb-2" src='{{ ( $image.Fit "960x640 Center" ).RelPermalink }}' />
@@ -16,7 +16,7 @@
           <div class="d-flex justify-content-between">
             <p>${{ .Params.price }}</p>
             <button class="btn btn-outline-dark btn-sm snipcart-add-item"
-              data-item-id="{{ .Params.id }}"
+              data-item-id="{{ $slug }}"
               data-item-price="{{ .Params.price }}"
               data-item-description="{{ .Description }}"
               data-item-image="{{ ( $image.Fit "200x200 Center" ).RelPermalink }}"
