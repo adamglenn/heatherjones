@@ -16,7 +16,7 @@
           <div class="d-flex justify-content-between">
             <p>${{ .Params.price }}</p>
             <button class="btn btn-outline-dark btn-sm snipcart-add-item"
-              data-item-id="{{ .Params.slug }}"
+              data-item-id="{{ .Params.id }}"
               data-item-price="{{ .Params.price }}"
               data-item-description="{{ .Description }}"
               data-item-image="{{ ( $image.Fit "200x200 Center" ).RelPermalink }}"
