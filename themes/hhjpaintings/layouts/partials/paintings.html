@@ -13,14 +13,17 @@
             {{ $image = resources.Get . }}
             <img load="lazy" data-bs-toggle="modal" data-bs-target="#{{ $slug }}-modal" class="w-100 mb-2" src='{{ ( $image.Fit "960x640 Center" ).RelPermalink }}' />
           {{ end }}
-          <button class="btn btn-outline-dark btn-sm snipcart-add-item"
-            data-item-id="{{ .Params.slug }}"
-            data-item-price="{{ .Params.price }}"
-            data-item-description="{{ .Description }}"
-            data-item-image="{{ ( $image.Fit "200x200 Center" ).RelPermalink }}"
-            data-item-name="{{ .Title }}">
-            <span class="fas fa-plus"></span> Add to cart
-          </button>
+          <div class="d-flex justify-content-between">
+            <p>${{ .Params.price }}</p>
+            <button class="btn btn-outline-dark btn-sm snipcart-add-item"
+              data-item-id="{{ .Params.slug }}"
+              data-item-price="{{ .Params.price }}"
+              data-item-description="{{ .Description }}"
+              data-item-image="{{ ( $image.Fit "200x200 Center" ).RelPermalink }}"
+              data-item-name="{{ .Title }}">
+              <span class="fas fa-plus"></span> Add to cart
+            </button>
+          </div>
           <div class="modal fade" id="{{ .Params.slug }}-modal" tabindex="-1" aria-labelledby="{{ .Params.slug }}-modal-label" aria-hidden="true">
             <div class="modal-dialog modal-xl">
               <div class="modal-content">
