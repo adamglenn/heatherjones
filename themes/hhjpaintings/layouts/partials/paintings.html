@@ -24,11 +24,11 @@
               <span class="fas fa-plus"></span> Add to cart
             </button>
           </div>
-          <div class="modal fade" id="{{ .Params.slug }}-modal" tabindex="-1" aria-labelledby="{{ .Params.slug }}-modal-label" aria-hidden="true">
+          <div class="modal fade" id="{{ $slug }}-modal" tabindex="-1" aria-labelledby="{{ $slug }}-modal-label" aria-hidden="true">
             <div class="modal-dialog modal-xl">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="{{ .Params.slug }}-modal-label">{{ .Title }}</h5>
+                  <h5 class="modal-title" id="{{ $slug }}-modal-label">{{ .Title }}</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">

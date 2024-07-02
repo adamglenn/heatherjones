@@ -16,11 +16,11 @@ Renders a menu for the given menu ID.
       <button class="navbar-toggler w-100 flapjack-regular py-2 mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span> Menu
       </button>
-      <div class="collapse navbar-collapse d-xl-flex justify-content-center" id="navbarSupportedContent">
-        <ul class="navbar-nav mb-2 mb-lg-0 flapjack-regular fs-5 me-4">
+      <div class="collapse navbar-collapse d-xl-flex flex-column" id="navbarSupportedContent">
+        <ul class="navbar-nav mb-2 mb-lg-0 flapjack-regular fs-5 align-self-center">
           {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
         </ul>
-        <div class="btn-group">
+        <div class="btn-group align-self-end">
           <button class="btn snipcart-checkout">
             <span class="fas fa-shopping-cart"></span> My Cart (<span class="snipcart-items-count"></span>)
           </button>
