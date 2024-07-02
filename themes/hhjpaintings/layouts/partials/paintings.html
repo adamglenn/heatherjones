@@ -1,46 +1,9 @@
 {{ $pages := where site.RegularPages "Type" "paintings" }}
-{{ $image := "" }}
-{{ $linkToCover := "" }}
-{{ $src := "" }}
-{{ $slug := "" }}
 <div class="py-5">
   <div class="container">
     <div class="row gx-4" data-masonry='{"percentPosition": true }'>
       {{ range $pages }}
-        <div class="col-lg-6 col-xl-4 mb-4">
-          {{ $slug = .Title | urlize }}
-          {{ with .Params.featured_image }}
-            {{ $image = resources.Get . }}
-            <img load="lazy" data-bs-toggle="modal" data-bs-target="#{{ $slug }}-modal" class="w-100 mb-2" src='{{ ( $image.Fit "960x640 Center" ).RelPermalink }}' />
-          {{ end }}
-          <div class="d-flex justify-content-between">
-            <p>${{ .Params.price }}</p>
-            <button class="btn btn-outline-dark btn-sm snipcart-add-item"
-              data-item-id="{{ $slug }}"
-              data-item-price="{{ .Params.price }}"
-              data-item-description="{{ .Description }}"
-              data-item-image="{{ ( $image.Fit "200x200 Center" ).RelPermalink }}"
-              data-item-name="{{ .Title }}">
-              <span class="fas fa-plus"></span> Add to cart
-            </button>
-          </div>
-          <div class="modal fade" id="{{ $slug }}-modal" tabindex="-1" aria-labelledby="{{ $slug }}-modal-label" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="{{ $slug }}-modal-label">{{ .Title }}</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  {{ with .Params.featured_image }}
-                    {{ $image = resources.Get . }}
-                    <img load="lazy" class="w-100" src='{{ ( $image.Fit "2000x2000 Center" ).RelPermalink }}' />
-                  {{ end }}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        {{ partial "painting.html" . }}
       {{ end }}
     </div>
   </div>

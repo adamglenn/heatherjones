@@ -19,3 +19,5 @@ weight = 60
 
 [taxonomies]
   collection = 'collections'
+  category = 'categories'
+  tag = 'tags'

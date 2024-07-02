@@ -1,7 +1,7 @@
 ---
 title: Flowers and Vase
 featured_image: /img/flowers-and-vase.jpg
-collection:
+collections:
   - still-life
 price: 0.05
 ---

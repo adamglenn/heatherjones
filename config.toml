@@ -2,3 +2,8 @@ baseURL = 'https://heatherjones.netlify.app/'
 languageCode = 'en-us'
 title = 'Heather Heiskell Jones'
 theme = 'hhjpaintings'
+
+[taxonomies]
+  collection = 'collections'
+  category = 'categories'
+  tag = 'tags'
