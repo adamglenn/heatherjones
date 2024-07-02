@@ -1,9 +1,12 @@
 {{ define "main" }} 
   <section class="py-5">
     <div class="container">
-      {{ range  .Pages }}
-        {{ partial "painting.html" . }}
-      {{ end }}
+      <h1 class="display-4 mb-4">{{ .Title }}</h1>
+      <div class="row gx-4" data-masonry='{"percentPosition": true }'>
+        {{ range  .Pages }}
+          {{ partial "painting.html" . }}
+        {{ end }}
+      </div>
     </div>
   </section>
 {{ end }}

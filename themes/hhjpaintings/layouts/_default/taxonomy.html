@@ -3,21 +3,27 @@
   {{ $tagPages := "" }}
   {{ $firstImage := "" }}
   {{ $linkToPage := "" }}
+  {{ $linkTitle := "" }}
+  {{ $count := "" }}
   <section class="py-5">
     <div class="container">
-      <h1>{{ .Title }}</h1>
+      <h1 class="display-4 mb-4">{{ .Title }}</h1>
       {{ .Content }}
       <div class="row gx-4">
         {{ range .Data.Terms.ByCount }}
           {{ $linkToPage = .Page.RelPermalink }}
-          <div class="col-lg-6 col-xl-4 mb-4">
-            {{ range first 1 .WeightedPages }}
-              {{ $firstImage = resources.Get .Params.featured_image }}
-              {{ with $firstImage }}
-                <a href="{{ $linkToPage }}"><img class="mw-100" src="{{ ( $firstImage.Fill "960x640 Center" ).RelPermalink }}" /></a>
+          {{ $linkTitle = .Page.LinkTitle }}
+          {{ $count = .Count }}
+          <div class="col-md-6 col-xl-4 mb-4">
+            <div class="ratio ratio-1x1">
+              {{ range first 1 .WeightedPages }}
+                {{ $firstImage = resources.Get .Params.featured_image }}
+                {{ with $firstImage }}
+                  <img class="mw-100" src="{{ ( $firstImage.Fill "960x960 Center" ).RelPermalink }}" />
+                  <a class="stretched-link d-inline-block text-decoration-none" href="{{ $linkToPage }}"><span class="bg-dark text-white p-2">{{ $linkTitle }}</span></a> ({{ $count }})
+                {{ end }}
               {{ end }}
-            {{ end }}
-            <h2><a href="{{ $linkToPage }}">{{ .Page.LinkTitle }}</a> ({{ .Count }})</h2>
+            </div>
           </div>
         {{ end }}
       </div>

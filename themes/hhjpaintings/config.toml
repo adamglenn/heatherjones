@@ -8,6 +8,11 @@ pageRef = '/paintings'
 weight = 40
 
 [[menus.main]]
+name = 'Collections'
+pageRef = '/collections'
+weight = 50
+
+[[menus.main]]
 name = 'About'
 pageRef = '/about'
 weight = 60
