@@ -2,6 +2,6 @@
 title: Trees
 featured_image: /img/trees.jpg
 collections:
-  - landscapes
+  - landscape
 price: 0.05
 ---
