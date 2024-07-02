@@ -14,7 +14,7 @@ collections:
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Image', name: 'featured_image', widget: 'image' }
-      - { label: 'Tags', name: 'tags', widget: 'list' }
+      - { label: 'Collection', name: 'collection', widget: 'list' }
       - { label: 'Image Alt Text', name: 'featured_image_alt', widget: 'text', required: false }
       - { label: 'Description', name: 'description', widget: 'text', required: false }
       - { label: 'Price', name: 'price', widget: 'number', value_type: 'float', step: .01 }

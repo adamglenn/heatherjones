@@ -16,3 +16,6 @@ weight = 60
   [module.hugoVersion]
     extended = true
     min = "0.116.0"
+
+[taxonomies]
+  collection = 'collections'
