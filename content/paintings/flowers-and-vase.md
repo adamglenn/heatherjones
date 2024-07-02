@@ -2,6 +2,7 @@
 title: Flowers and Vase
 featured_image: /img/flowers-and-vase.jpg
 tags:
-  - Still Life
+  - still-life
+  - oil
 price: 0.05
 ---
