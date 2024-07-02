@@ -11,9 +11,11 @@
         {{ range .Data.Terms.ByCount }}
           {{ $linkToPage = .Page.RelPermalink }}
           <div class="col-lg-6 col-xl-4 mb-4">
-            {{ range .WeightedPages }}
+            {{ range first 1 .WeightedPages }}
               {{ $firstImage = resources.Get .Params.featured_image }}
-              <a href="{{ $linkToPage }}"><img class="mw-100" src="{{ ( $firstImage.Fill "960x640 Center" ).RelPermalink }}" /></a>
+              {{ with $firstImage }}
+                <a href="{{ $linkToPage }}"><img class="mw-100" src="{{ ( $firstImage.Fill "960x640 Center" ).RelPermalink }}" /></a>
+              {{ end }}
             {{ end }}
             <h2><a href="{{ $linkToPage }}">{{ .Page.LinkTitle }}</a> ({{ .Count }})</h2>
           </div>
