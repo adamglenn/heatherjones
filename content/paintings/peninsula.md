@@ -2,6 +2,6 @@
 title: Peninsula
 featured_image: /img/peninsula.jpg
 collections:
-  - landscape
+  - landscapes
 price: 0.05
 ---
