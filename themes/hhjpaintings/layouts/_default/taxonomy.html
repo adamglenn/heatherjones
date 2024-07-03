@@ -21,7 +21,7 @@
                 {{ $firstImage = resources.Get .Params.featured_image }}
                 {{ with $firstImage }}
                   <img class="mw-100" src="{{ ( $firstImage.Fill "960x960 Center" ).RelPermalink }}" />
-                  <a class="stretched-link d-inline-block text-decoration-none lh-1" href="{{ $linkToPage }}"><span class="bg-dark text-white p-2 d-inline-block">{{ replace $linkTitle "-" " " }} <span class="badge bg-primary">{{ $count }}</span></span></a>
+                  <a class="stretched-link d-inline-block text-decoration-none lh-1" href="{{ $linkToPage }}"><span class="bg-dark text-white p-2 d-inline-block">{{ replace $linkTitle "-" " " }} <span class="badge bg-light text-dark">{{ $count }}</span></span></a>
                 {{ end }}
               {{ end }}
             </div>

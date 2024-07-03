@@ -6,7 +6,9 @@
     <img load="lazy" data-bs-toggle="modal" data-bs-target="#{{ $slug }}-modal" class="w-100 mb-2" src='{{ ( $image.Fit "960x640 Center" ).RelPermalink }}' />
   {{ end }}
   <div class="d-flex justify-content-between align-items-center">
-    <p class="mb-0">${{ .Params.price }}</p>
+    <div>
+      <p class="d-inline-block mb-0">${{ .Params.price }}</p><p class="ms-2 d-inline-block mb-0 small"><a class="text-dark text-decoration-none" href="{{ .RelPermalink }}">View Page <span class="fas fa-arrow-right"></span></a></p>
+    </div>
     <button class="btn btn-outline-dark btn-sm snipcart-add-item"
       data-item-id="{{ $slug }}"
       data-item-price="{{ .Params.price }}"
