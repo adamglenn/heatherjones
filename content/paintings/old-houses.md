@@ -2,6 +2,6 @@
 title: Old Houses
 featured_image: /img/old-houses.jpg
 collections:
-  - landscape
+  - landscapes
 price: 0.05
 ---

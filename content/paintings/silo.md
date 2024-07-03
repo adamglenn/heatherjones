@@ -3,6 +3,6 @@ title: Silo
 featured_image: /img/silo.jpg
 collections:
   - structures
-  - landscape
+  - landscapes
 price: 0.05
 ---

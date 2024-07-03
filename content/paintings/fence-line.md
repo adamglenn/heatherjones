@@ -2,6 +2,6 @@
 title: Fence Line
 featured_image: /img/fenceline.jpg
 collections:
-  - landscape
+  - landscapes
 price: 0.05
 ---

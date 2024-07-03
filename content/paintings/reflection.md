@@ -2,7 +2,7 @@
 title: Reflection
 featured_image: /img/reflection.jpg
 collections:
-  - landscape
+  - landscapes
   - abstract
 price: 0.05
 ---
