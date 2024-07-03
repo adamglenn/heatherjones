@@ -6,20 +6,21 @@
     <img load="lazy" data-bs-toggle="modal" data-bs-target="#{{ $slug }}-modal" class="w-100 mb-2" src='{{ ( $image.Fit "960x640 Center" ).RelPermalink }}' />
   {{ end }}
   <div class="d-flex justify-content-between align-items-center">
-    <div>
-      <p class="d-inline-block mb-0">${{ .Params.price }}</p><p class="ms-2 d-inline-block mb-0 small"><a class="text-dark text-decoration-none" href="{{ .RelPermalink }}">View Page <span class="fas fa-arrow-right"></span></a></p>
+    <p class="d-inline-block mb-0">${{ .Params.price }}</p>
+    <div class="btn-group">
+      <button class="btn btn-dark btn-sm snipcart-add-item"
+        data-item-id="{{ $slug }}"
+        data-item-price="{{ .Params.price }}"
+        data-item-description="{{ .Description }}"
+        {{ with .Params.featured_image }}
+          {{ $image = resources.Get . }}
+          data-item-image="{{ ( $image.Fit "200x200 Center" ).RelPermalink }}"
+        {{ end }}
+        data-item-name="{{ .Title }}">
+        <span class="fas fa-plus"></span> Add to Cart
+      </button>
+      <a class="btn btn-outline-dark btn-sm" href="{{ .RelPermalink }}">View on Page</a>
     </div>
-    <button class="btn btn-outline-dark btn-sm snipcart-add-item"
-      data-item-id="{{ $slug }}"
-      data-item-price="{{ .Params.price }}"
-      data-item-description="{{ .Description }}"
-      {{ with .Params.featured_image }}
-        {{ $image = resources.Get . }}
-        data-item-image="{{ ( $image.Fit "200x200 Center" ).RelPermalink }}"
-      {{ end }}
-      data-item-name="{{ .Title }}">
-      <span class="fas fa-plus"></span> Add to cart
-    </button>
   </div>
   <div class="modal fade" id="{{ $slug }}-modal" tabindex="-1" aria-labelledby="{{ $slug }}-modal-label" aria-hidden="true">
     <div class="modal-dialog modal-xl">
