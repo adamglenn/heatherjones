@@ -1,7 +1,8 @@
 {{ define "main" }} 
-  <section class="py-5">
+  <section aria-labelledby="collection-label" class="pb-5">
     <div class="container">
-      <h1 class="display-4 mb-4">{{ .Title }}</h1>
+      {{ partial "breadcrumbs.html" . }}
+      <h1 id="collection-label" class="display-4 mb-4 mt-5">{{ .Title }}</h1>
       <div class="row gx-4" data-masonry='{"percentPosition": true }'>
         {{ range  .Pages }}
           {{ partial "painting.html" . }}

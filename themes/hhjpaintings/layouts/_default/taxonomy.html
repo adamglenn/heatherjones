@@ -5,9 +5,10 @@
   {{ $linkToPage := "" }}
   {{ $linkTitle := "" }}
   {{ $count := "" }}
-  <section class="py-5">
+  <section aria-labelledby="taxonomy-label" class="pb-5">
     <div class="container">
-      <h1 class="display-4 mb-4">{{ .Title }}</h1>
+      {{ partial "breadcrumbs.html" . }}
+      <h1 id="taxonomy-label" class="display-4 mb-4 mt-5">{{ .Title }}</h1>
       {{ .Content }}
       <div class="row gx-4">
         {{ range .Data.Terms.ByCount }}
@@ -20,7 +21,7 @@
                 {{ $firstImage = resources.Get .Params.featured_image }}
                 {{ with $firstImage }}
                   <img class="mw-100" src="{{ ( $firstImage.Fill "960x960 Center" ).RelPermalink }}" />
-                  <a class="stretched-link d-inline-block text-decoration-none" href="{{ $linkToPage }}"><span class="bg-dark text-white p-2">{{ $linkTitle }}</span></a> ({{ $count }})
+                  <a class="stretched-link d-inline-block text-decoration-none lh-1" href="{{ $linkToPage }}"><span class="bg-dark text-white p-2 d-inline-block">{{ replace $linkTitle "-" " " }} <span class="badge bg-primary">{{ $count }}</span></span></a>
                 {{ end }}
               {{ end }}
             </div>

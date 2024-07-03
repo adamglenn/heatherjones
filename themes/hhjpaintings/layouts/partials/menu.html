@@ -13,19 +13,19 @@ Renders a menu for the given menu ID.
 {{- with index site.Menus $menuID }}
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-      <button class="navbar-toggler w-100 flapjack-regular py-2 mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span> Menu
+      <button class="navbar-toggler py-2 mb-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> <span class="small">Menu</span>
       </button>
-      <div class="collapse navbar-collapse d-xl-flex align-items-cemter justify-content-center" id="navbarSupportedContent">
-        <ul class="navbar-nav mb-2 mb-lg-0 align-self-center">
+      <div class="btn-group ms-auto order-lg-1">
+        <button class="btn btn-sm snipcart-checkout">
+          <span class="fas fa-shopping-cart"></span> Cart (<span class="snipcart-items-count"></span>)
+        </button>
+        <button class="btn btn-sm snipcart-customer-signin"><span class="far fa-user-circle"></span> Account</button>
+      </div>
+      <div class="collapse navbar-collapse order-lg-0" id="navbarSupportedContent">
+        <ul class="navbar-nav mb-2 mb-lg-0 mt-2 mt-lg-0">
           {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
         </ul>
-        <div class="btn-group ms-auto">
-          <button class="btn btn-sm snipcart-checkout">
-            <span class="fas fa-shopping-cart"></span> My Cart (<span class="snipcart-items-count"></span>)
-          </button>
-          <button class="btn btn-sm snipcart-customer-signin"><span class="far fa-user-circle"></span> My Account</button>
-        </div>
       </div>
     </div>
   </nav>

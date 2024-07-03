@@ -5,8 +5,8 @@
     {{ $image = resources.Get . }}
     <img load="lazy" data-bs-toggle="modal" data-bs-target="#{{ $slug }}-modal" class="w-100 mb-2" src='{{ ( $image.Fit "960x640 Center" ).RelPermalink }}' />
   {{ end }}
-  <div class="d-flex justify-content-between">
-    <p>${{ .Params.price }}</p>
+  <div class="d-flex justify-content-between align-items-center">
+    <p class="mb-0">${{ .Params.price }}</p>
     <button class="btn btn-outline-dark btn-sm snipcart-add-item"
       data-item-id="{{ $slug }}"
       data-item-price="{{ .Params.price }}"
@@ -29,7 +29,7 @@
         <div class="modal-body">
           {{ with .Params.featured_image }}
             {{ $image = resources.Get . }}
-            <img load="lazy" class="w-100" src='{{ ( $image.Fit "2000x2000 Center" ).RelPermalink }}' />
+            <img class="w-100" src='{{ ( $image.Fit "2000x2000 Center" ).RelPermalink }}' />
           {{ end }}
         </div>
       </div>
