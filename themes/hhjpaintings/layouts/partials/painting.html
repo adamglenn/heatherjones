@@ -6,21 +6,26 @@
     <img load="lazy" data-bs-toggle="modal" data-bs-target="#{{ $slug }}-modal" class="w-100 mb-2" src='{{ ( $image.Fit "960x640 Center" ).RelPermalink }}' />
   {{ end }}
   <div class="d-flex justify-content-between align-items-center">
-    <p class="d-inline-block mb-0">${{ .Params.price }}</p>
-    <div class="btn-group">
-      <button class="btn btn-dark btn-sm snipcart-add-item"
-        data-item-id="{{ $slug }}"
-        data-item-price="{{ .Params.price }}"
-        data-item-description="{{ .Description }}"
-        {{ with .Params.featured_image }}
-          {{ $image = resources.Get . }}
-          data-item-image="{{ ( $image.Fit "200x200 Center" ).RelPermalink }}"
-        {{ end }}
-        data-item-name="{{ .Title }}">
-        <span class="fas fa-plus"></span> Add to Cart
-      </button>
-      <a class="btn btn-outline-dark btn-sm" href="{{ .RelPermalink }}">View on Page</a>
-    </div>
+    {{ if ne .Params.sold true }}
+      <p class="d-inline-block mb-0">${{ .Params.price }}</p>
+      <div class="btn-group">
+        <button class="btn btn-dark btn-sm snipcart-add-item"
+          data-item-id="{{ $slug }}"
+          data-item-price="{{ .Params.price }}"
+          data-item-description="{{ .Description }}"
+          {{ with .Params.featured_image }}
+            {{ $image = resources.Get . }}
+            data-item-image="{{ ( $image.Fit "200x200 Center" ).RelPermalink }}"
+          {{ end }}
+          data-item-name="{{ .Title }}">
+          <span class="fas fa-plus"></span> Add to Cart
+        </button>
+        <a class="btn btn-outline-dark btn-sm" href="{{ .RelPermalink }}">View Page</a>
+      </div>
+    {{ else }}
+      <div class="text-danger text-uppercase"><strong>Sold</strong></div>
+      <a class="btn btn-outline-dark btn-sm" href="{{ .RelPermalink }}">View Page</a>
+    {{ end }}
   </div>
   <div class="modal fade" id="{{ $slug }}-modal" tabindex="-1" aria-labelledby="{{ $slug }}-modal-label" aria-hidden="true">
     <div class="modal-dialog modal-xl">

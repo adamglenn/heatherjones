@@ -1,15 +1,45 @@
 {{ define "main" }}
+  {{ $image := "" }}
+  {{ $slug := .Title | urlize }}
   <main class="pb-5">
     <div class="container">
       {{ partial "breadcrumbs.html" . }}
       <h1 class="display-4 mb-4 mt-5">{{ .Title }}</h1>
-
-      {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
-      {{ $dateHuman := .Date | time.Format ":date_long" }}
-      <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
-
-      {{ .Content }}
-      {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+      {{ if eq .Type "paintings" }}
+        {{ $image = resources.Get .Params.featured_image }}
+        <div class="row">
+          <div class="col-xl-8 mb-4 mb-xl-0">
+            <img class="w-100 shadow-lg" src='{{ ( $image.Fit "2000x2000 Center" ).RelPermalink }}' alt="" />
+          </div>
+          <div class="col-xl-4">
+            {{ if ne .Params.sold true }}
+              <div class="p-4 border border-1 border-dark bg-white shadow rounded mb-4">
+                <p class="h2">${{ .Params.price }}</p>
+                <button class="btn btn-dark btn-sm snipcart-add-item"
+                  data-item-id="{{ $slug }}"
+                  data-item-price="{{ .Params.price }}"
+                  data-item-description="{{ .Description }}"
+                  {{ with .Params.featured_image }}
+                    {{ $image = resources.Get . }}
+                    data-item-image="{{ ( $image.Fit "200x200 Center" ).RelPermalink }}"
+                  {{ end }}
+                  data-item-name="{{ .Title }}">
+                  <span class="fas fa-plus"></span> Add to Cart
+                </button>
+              </div>
+              {{ partial "terms.html" (dict "taxonomy" "collections" "page" .) }}
+            {{ else }}
+              <p class="text-danger text-uppercase h2 mb-4">Sold</p>
+            {{ end }}
+          </div>
+        </div>        
+      {{ else }}
+        {{ partial "terms.html" (dict "taxonomy" "collections" "page" .) }}
+        {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+        {{ $dateHuman := .Date | time.Format ":date_long" }}
+        <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+        {{ .Content }}
+      {{ end }}
     </div>
   </main>
 {{ end }}
