@@ -3,6 +3,11 @@ languageCode = 'en-us'
 title = 'Heather Jones'
 
 [[menus.main]]
+name = 'Home'
+pageRef = '/'
+weight = 10
+
+[[menus.main]]
 name = 'Paintings'
 pageRef = '/paintings'
 weight = 40

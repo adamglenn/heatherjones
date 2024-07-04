@@ -1,9 +1,21 @@
 {{ $image := "" }}
 {{ $slug := .Title | urlize }}
+{{ $imageHeight := "" }}
+{{ $imageWidth := "" }}
+{{ $imageRatio := "" }}
+{{ $title := .Title }}
 <div class="col-lg-6 col-xl-4 mb-4">
   {{ with .Params.featured_image }}
     {{ $image = resources.Get . }}
-    <img load="lazy" data-bs-toggle="modal" data-bs-target="#{{ $slug }}-modal" class="w-100 mb-2" src='{{ ( $image.Fit "960x640 Center" ).RelPermalink }}' />
+    {{ with resources.Get $image }}
+      {{ $imageHeight = float .Height }}
+      {{ $imageWidth = float .Width }}
+      {{ $imageRatio = div $imageHeight $imageWidth }}
+      {{ $imageRatio = mul $imageRatio 100 }}
+    {{ end }}
+    <div class="position-relative mb-2 ratio" style="--bs-aspect-ratio: {{ $imageRatio }}%">
+      <img alt="Painting of {{ $title }}" load="lazy" data-bs-toggle="modal" data-bs-target="#{{ $slug }}-modal" class="w-100" src='{{ ( $image.Fit "960x640 Center" ).RelPermalink }}' />
+    </div>
   {{ end }}
   <div class="d-flex justify-content-between align-items-center">
     {{ if ne .Params.sold true }}
