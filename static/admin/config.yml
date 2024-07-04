@@ -18,7 +18,7 @@ collections:
       - { label: 'Image Alt Text', name: 'featured_image_alt', widget: 'text', required: false }
       - { label: 'Description', name: 'description', widget: 'text', required: false }
       - { label: 'Price', name: 'price', widget: 'number', value_type: 'float', step: .01 }
-      - { label: 'Sold', name: 'sold', widget: 'boolean' }
+      - { label: 'Sold', name: 'sold', widget: 'boolean', required: false }
   # - name: 'blog'
   #   label: 'Blog'
   #   folder: "content/posts"
