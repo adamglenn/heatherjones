@@ -5,4 +5,5 @@ collections:
   - landscapes
   - abstract
 price: 0.05
+featured: true
 ---

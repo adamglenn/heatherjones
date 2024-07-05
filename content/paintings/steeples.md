@@ -6,4 +6,5 @@ collections:
 featured_image_alt: Steeples in the distance.
 description: Test description.
 price: 0.05
+featured: true
 ---

@@ -5,4 +5,5 @@ collections:
   - structures
   - landscapes
 price: 0.05
+featured: true
 ---

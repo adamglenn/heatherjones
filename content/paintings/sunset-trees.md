@@ -6,4 +6,5 @@ collections:
   - abstract
 price: 0.05
 sold: false
+featured: true
 ---
