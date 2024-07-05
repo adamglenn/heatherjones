@@ -11,10 +11,9 @@
           <div class="col-xl-7 {{ $align }}">
             <div class="">
               <h1 class="display-3 lh-1 mb-3 d-inline-block"><span class="bg-dark p-2" style="line-height: 1.35em;">{{ .heading }}</span></h1>
-              {{ if .subheading }}
-                <p class="monograph-text-bold fs-2">{{ .subheading }}</p>
+              {{ if .lede }}
+                <p class="lead mb-4 fs-4 ms-xl-5">{{ .lede }}</p>
               {{ end }}
-              <p class="lead mb-4 fs-5 ms-xl-5">{{ .lede }}</p>
               {{ if .cta }}
                 {{ range .cta }}
                   <a class="btn btn-white btn-sm text-decoration-none ms-xl-5" href="{{ .url }}">{{ .button_text }} <span class="fas fa-arrow-right"></span></a>

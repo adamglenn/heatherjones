@@ -1,10 +1,18 @@
 {{ $pages := where site.RegularPages "Type" "paintings" }}
 <div class="py-5">
   <div class="container">
-    <h2 class="display-3 mb-4">Gallery</h2>
+    <h2 class="display-3 mb-4">Featured</h2>
     <div class="row gx-4" data-masonry='{"percentPosition": true }'>
       {{ range $pages }}
-        {{ partial "painting.html" . }}
+        {{ with .Params.featured }}
+          {{ if .IsHome }}
+            {{ if .Params.featured true }}
+              {{ partial "painting.html" . }}
+            {{ end }}
+          {{ else }}
+            {{ partial "painting.html" . }}
+          {{ end }}
+        {{ end }}
       {{ end }}
     </div>
   </div>

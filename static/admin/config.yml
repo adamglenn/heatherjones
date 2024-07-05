@@ -19,10 +19,9 @@ collections:
           - label: "Hero"
             name: "hero"
             widget: object
-            collapsed: true
             fields:
               - { label: "Heading", name: 'heading', widget: 'string' }
-              - { label: "Lede", name: 'lede', widget: 'text' }
+              - { label: "Lede", name: 'lede', widget: 'text', required: false }
               - label: "Call to Action"
                 name: "cta"
                 widget: list
@@ -30,6 +29,14 @@ collections:
                 fields:
                   - { label: "Button Text", name: "button_text", widget: "string" }
                   - { label: "URL", name: "url", widget: "string" }
+          - label: 'About'
+            name: 'about'
+            widget: object
+            fields:
+              - { label: 'Featured Image', name: 'featured_image', widget: 'image', required: false }
+              - { label: 'Featured Image Alt Text', name: 'featured_image_alt', widget: 'string', required: false }
+              - { label: 'Heading', name: 'heading', widget: 'string' }
+              - { label: 'Body', name: 'body', widget: 'text' }
   - name: 'paintings'
     label: 'Paintings'
     folder: "content/paintings"
@@ -44,6 +51,7 @@ collections:
       - { label: 'Image Alt Text', name: 'featured_image_alt', widget: 'text', required: false }
       - { label: 'Description', name: 'description', widget: 'text', required: false }
       - { label: 'Price', name: 'price', widget: 'number', value_type: 'float', step: .01 }
+      - { label: 'Featured', name: 'featured', widget: 'boolean', default: true, required: false, hint: 'Leave this checked if you want to feature this painting on the Home page.' }
       - { label: 'Sold', name: 'sold', widget: 'boolean', required: false }
   # - name: 'blog'
   #   label: 'Blog'
