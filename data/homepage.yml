@@ -1,10 +1,8 @@
 hero:
   align: Left
-  heading: "Capturing life’s essence through brushstrokes."
-  lede: "Nestled in the heart of Morgantown, West Virginia, our charming cafe
-    offers a unique experience that blends the best of both worlds: delightful
-    brunch offerings and a curated selection of fine wines."
+  heading: Capturing life’s essence through brushstrokes.
+  lede: Experience art that speaks directly to the heart and ignites the imagination.
   photo: /img/detail.jpg
   cta:
     - button_text: View Collections
-      url: /menu
+      url: /collections
