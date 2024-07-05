@@ -1,8 +1,9 @@
 {{ $image := "" }}
-{{ with site.Data.homepage.about }}
-  <main id="about" class="py-5">
-    <div class="container py-5">
-      <div class="row">
+<main id="about" class="pb-5">
+  <div class="container">
+    {{ partial "breadcrumbs.html" . }}
+    {{ with site.Data.homepage.about }}
+      <div class="row my-5">
         {{ with .featured_image }}
           {{ $image = resources.Get . }}
           <div class="col-lg-6 mb-4 mb-lg-0">
@@ -14,6 +15,6 @@
           <p>{{ .body }}</p>
         </div>
       </div>
-    </div>
-  </main>
-{{ end }}
+    {{ end }}
+  </div>
+</main>
