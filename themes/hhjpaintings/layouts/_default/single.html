@@ -4,7 +4,7 @@
   <main class="pb-5">
     <div class="container">
       {{ partial "breadcrumbs.html" . }}
-      <h1 class="display-4 mb-4 mt-5">{{ .Title }}</h1>
+      <h1 class="display-4 mb-4 mt-5 muse">{{ .Title }}</h1>
       {{ if eq .Type "paintings" }}
         {{ $image = resources.Get .Params.featured_image }}
         <div class="row">

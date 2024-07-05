@@ -2,6 +2,9 @@ baseURL = 'https://heatherjones.netlify.app/'
 languageCode = 'en-us'
 title = 'Heather Jones'
 
+[params]
+  subtitle = 'Fine Art'
+
 [[menus.main]]
 name = 'Home'
 pageRef = '/'

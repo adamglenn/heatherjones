@@ -1,6 +1,6 @@
 baseURL = 'https://heatherjones.netlify.app/'
 languageCode = 'en-us'
-title = 'Heather Heiskell Jones | Fine Art'
+title = 'Heather Heiskell Jones'
 theme = 'hhjpaintings'
 
 [taxonomies]
