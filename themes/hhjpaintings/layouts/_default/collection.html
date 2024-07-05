@@ -1,8 +1,27 @@
-{{ define "main" }} 
+{{ define "main" }}
+  {{ $title := .Title }}
+  {{ $numberOfCollections := 0 }}
+  {{ $last := 0 }}
   <section aria-labelledby="collection-label" class="pb-5">
     <div class="container">
       {{ partial "breadcrumbs.html" . }}
       <h1 id="collection-label" class="display-4 mb-4 mt-5">{{ .Title }}</h1>
+      <p class="d-inline-block"><strong>More Collections:</strong></p>
+      <div class="bg-light mb-4 p-2 rounded d-inline-block">
+        <p class="mb-0 lh-1">
+          {{ range .Site.Taxonomies.collections }}
+            {{- if ne .Page.LinkTitle $title -}}
+              {{ $numberOfCollections = add $numberOfCollections 1 }}
+            {{ end }}
+          {{ end }}
+          {{ range .Site.Taxonomies.collections }}
+            {{- if ne .Page.LinkTitle $title -}}
+              {{ $last = add $last 1 }}
+              <a class="text-dark" href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}</a>{{ if lt $last $numberOfCollections }}, {{ end }}
+            {{ end }}
+          {{ end }}
+        </p>
+      </div>
       <div class="row gx-4" data-masonry='{"percentPosition": true }'>
         {{ range  .Pages }}
           {{ partial "painting.html" . }}

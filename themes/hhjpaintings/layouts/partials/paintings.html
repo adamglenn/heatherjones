@@ -1,8 +1,10 @@
 {{ $pages := where site.RegularPages "Type" "paintings" }}
 {{ $isHome := false }}
-<div class="py-5">
+<section class="py-5" aria-labelledby="paintings-label">
   <div class="container">
-    <h2 class="display-3 mb-4">Featured</h2>
+    {{ if .IsHome }}
+      <h2 id="paintings-label" class="h1 mb-4">Featured</h2>
+    {{ end }}
     <div class="row gx-4" data-masonry='{"percentPosition": true }'>
       {{ range $pages }}
         {{ $isHome = .IsHome }}
@@ -17,5 +19,9 @@
         {{ end }}
       {{ end }}
     </div>
+    <h3 class="h6 mt-4">Explore Collections</h3>
+    <div class="bg-light p-2 rounded d-inline-block">
+      List
+    </div>
   </div>
-</div>
+</section>
