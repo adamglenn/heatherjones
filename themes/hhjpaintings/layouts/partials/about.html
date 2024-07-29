@@ -4,14 +4,12 @@
     {{ partial "breadcrumbs.html" . }}
     {{ with site.Data.about }}
       <div class="row my-5">
-        {{ with .featured_image }}
-          {{ $image = resources.Get . }}
-          <div class="col-lg-6 mb-4 mb-lg-0">
-            <img src='{{ ( $image.Fit "960x640 Center" ).RelPermalink }}' alt="{{ .featured_image_alt }}" />
-          </div>
-        {{ end }}
         <div class="col-lg-6 mx-lg-auto">
           <h1 id="about-label" class="muse display-4 mb-4">{{ .heading }}</h1>
+          {{ with .featured_image }}
+            {{ $image = resources.Get . }}
+            <img class="img-fluid mb-4" src='{{ ( $image.Fit "960x640 Center" ).RelPermalink }}' alt="{{ .featured_image_alt }}" />
+          {{ end }}
           <p>{{ .body }}</p>
         </div>
       </div>
