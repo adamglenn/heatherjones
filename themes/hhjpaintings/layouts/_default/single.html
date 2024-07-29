@@ -15,7 +15,7 @@
             {{ if ne .Params.sold true }}
               <div class="p-4 border border-1 border-dark bg-white shadow rounded mb-4">
                 <p class="h2">${{ .Params.price }}</p>
-                <button class="btn btn-dark btn-sm snipcart-add-item"
+                <button class="snipcart-add-item btn btn-dark btn-sm"
                   data-item-id="{{ $slug }}"
                   data-item-price="{{ .Params.price }}"
                   data-item-description="{{ .Description }}"
@@ -23,7 +23,8 @@
                     {{ $image = resources.Get . }}
                     data-item-image="{{ ( $image.Fit "200x200 Center" ).RelPermalink }}"
                   {{ end }}
-                  data-item-name="{{ .Title }}">
+                  data-item-name="{{ .Title }}"
+                >
                   <span class="fas fa-plus"></span> Add to Cart
                 </button>
               </div>

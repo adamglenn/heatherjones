@@ -21,7 +21,7 @@
     {{ if ne .Params.sold true }}
       <p class="d-inline-block mb-0">${{ .Params.price }}</p>
       <div class="btn-group">
-        <button class="btn btn-dark btn-sm snipcart-add-item"
+        <button class="snipcart-add-item btn btn-dark btn-sm"
           data-item-id="{{ $slug }}"
           data-item-price="{{ .Params.price }}"
           data-item-description="{{ .Description }}"
