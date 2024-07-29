@@ -29,7 +29,8 @@
             {{ $image = resources.Get . }}
             data-item-image="{{ ( $image.Fit "200x200 Center" ).RelPermalink }}"
           {{ end }}
-          data-item-name="{{ .Title }}">
+          data-item-name="{{ .Title }}"
+        >
           <span class="fas fa-plus"></span> Add to Cart
         </button>
         <a class="btn btn-outline-dark btn-sm" href="{{ .RelPermalink }}">View Page</a>
