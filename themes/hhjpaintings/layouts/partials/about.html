@@ -2,7 +2,7 @@
 <main id="about" class="pb-5">
   <div class="container">
     {{ partial "breadcrumbs.html" . }}
-    {{ with site.Data.homepage.about }}
+    {{ with site.Data.about }}
       <div class="row my-5">
         {{ with .featured_image }}
           {{ $image = resources.Get . }}
