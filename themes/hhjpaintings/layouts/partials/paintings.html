@@ -8,7 +8,7 @@
       <h2 id="paintings-label" class="h1 mb-4 muse">Featured</h2>
     {{ end }}
     <div class="row gx-4" data-masonry='{"percentPosition": true }'>
-      {{ range $pages }}
+      {{ range $pages.ByDate.Reverse }}
         {{ if eq $isHome true }}
           {{ if eq .Params.featured true }}
             {{ partial "painting.html" . }}
