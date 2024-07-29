@@ -44,7 +44,6 @@ collections:
     slug: "{{slug}}"
     editor:
       preview: false
-    filter: { field: "collections", value: "landscapes" }
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Image', name: 'featured_image', widget: 'image' }
