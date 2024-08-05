@@ -52,11 +52,12 @@ collections:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Image', name: 'featured_image', widget: 'image' }
-      - { label: 'Collection', name: 'collections', widget: 'list', hint: "These should be consistent with other paintings of the same collection, all lowercase, no special characters, substitute hyphens for spaces e.g. ‘still-life’ (without quote marks)." }
       - { label: 'Image Alt Text', name: 'featured_image_alt', widget: 'text', required: false }
+      - { label: 'Height (inches)', name: 'height', widget: number, required: false }
+      - { label: 'Width (inches)', name: 'width', widget: number, required: false }
+      - { label: 'Gallery-Wrapped Canvas', name: 'framing', widget: 'boolean', required: false }
       - { label: 'Description', name: 'description', widget: 'text', required: false }
       - { label: 'Price', name: 'price', widget: 'number', value_type: 'float', step: .01 }
-      - { label: 'Featured', name: 'featured', widget: 'boolean', default: true, required: false, hint: 'Leave this checked if you want to feature this painting on the Home page.' }
       - { label: 'Sold', name: 'sold', widget: 'boolean', required: false }
   # - name: 'blog'
   #   label: 'Blog'

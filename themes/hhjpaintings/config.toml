@@ -11,16 +11,6 @@ pageRef = '/'
 weight = 10
 
 [[menus.main]]
-name = 'All Paintings'
-pageRef = '/paintings'
-weight = 40
-
-[[menus.main]]
-name = 'Browse by Collection'
-pageRef = '/collections'
-weight = 50
-
-[[menus.main]]
 name = 'About Heather'
 pageRef = '/about'
 weight = 60

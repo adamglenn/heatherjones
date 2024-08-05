@@ -5,27 +5,11 @@
 <section class="py-5" aria-labelledby="paintings-label">
   <div class="container">
     {{ if .IsHome }}
-      <h2 id="paintings-label" class="h1 mb-4 muse">Featured</h2>
+      <h2 id="paintings-label" class="h1 mb-4 muse">Gallery</h2>
     {{ end }}
     <div class="row gx-4" data-masonry='{"percentPosition": true }'>
       {{ range $pages.ByDate.Reverse }}
-        {{ if eq $isHome true }}
-          {{ if eq .Params.featured true }}
-            {{ partial "painting.html" . }}
-          {{ end }}
-        {{ else }}
-          {{ partial "painting.html" . }}
-        {{ end }}
-      {{ end }}
-    </div>
-    <h3 class="h6 mt-4">Explore Collections:</h3>
-    <div class="bg-light p-2 rounded d-inline-block">
-      {{ range .Site.Taxonomies.collections }}
-        {{ $numberOfCollections = add $numberOfCollections 1 }}
-      {{ end }}
-      {{ range .Site.Taxonomies.collections }}
-        {{ $last = add $last 1 }}
-        <a class="text-dark" href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}</a>{{ if lt $last $numberOfCollections }}, {{ end }}
+        {{ partial "painting.html" . }}
       {{ end }}
     </div>
   </div>
