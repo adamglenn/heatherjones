@@ -18,7 +18,7 @@
     </div>
   {{ end }}
   <div class="row">    
-    <div class="col-6">
+    <div class="col-md-6">
       <h2 class="h4 muse mb-1">{{ .Params.Title }}</h2>
       <p class="small">
         Oil on Canvas
@@ -32,14 +32,14 @@
         {{ end }}
       </p>
     </div>
-    <div class="col-6">
+    <div class="col-md-6 mb-4 mb-md-0">
       {{ if ne .Params.sold true }}
-        <p class="mb-0 text-end mb-2 h5 fw-bold">${{ .Params.price }}</p>
+        <p class="mb-0 text-md-end mb-2 h5 fw-bold">${{ .Params.price }}</p>
       {{ else }}
-        <div class="text-danger text-uppercase h5 fw-bold text-end">Sold</div>
+        <div class="text-danger text-uppercase h5 fw-bold text-md-end">Sold</div>
       {{ end }}
       {{ if ne .Params.sold true }}
-        <div class="d-flex justify-content-end">
+        <div class="d-md-flex justify-content-end">
           <div class="btn-group my-auto">
             <button class="snipcart-add-item btn btn-dark btn-sm"
               data-item-id="{{ $slug }}"

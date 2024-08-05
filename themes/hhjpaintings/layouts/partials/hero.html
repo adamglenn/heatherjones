@@ -1,24 +1,32 @@
-{{ $align := "" }}
 {{ with site.Data.homepage.hero }}
   {{ $image := resources.Get .photo }}
-  {{ if eq .align "Right" }}
-    {{ $align = "ms-auto" }}
-  {{ end }}
-  <main class="py-5 bg-dark text-white" style="background-image: url('{{ ( $image.Fill "1800x771 Center" ).RelPermalink }}'); background-size: cover; background-repeat: no-repeat;">
-    <div class="d-flex align-items-center">
-      <div class="container py-5">
-        <div class="row py-5">
-          <div class="col-xl-7 {{ $align }}">
-            <div class="">
-              <h1 class="display-3 lh-1 mb-3 d-inline-block muse">{{ .heading }}</h1>
-              {{ if .lede }}
-                <p class="lead mb-4 fs-4">{{ .lede }}</p>
-              {{ end }}
-              {{ if .cta }}
-                {{ range .cta }}
-                  <a class="btn btn-white btn-sm text-decoration-none" href="{{ .url }}">{{ .button_text }} <span class="fas fa-arrow-right"></span></a>
+  <main class="py-5 bg-dark text-white position-relative w-100 h-100 d-flex align-items-center">
+    <div class="w-100">
+      {{ with .photo }}
+        <img
+          class="ag-bg-img"
+          srcset='{{ ( $image.Fill "576x248 webp Center" ).RelPermalink }} 576w, {{ ( $image.Fill "768x330 webp Center" ).RelPermalink }} 768w, {{ ( $image.Fill "992x427 webp Center" ).RelPermalink }} 992w, {{ ( $image.Fill "1200x516 webp Center" ).RelPermalink }} 1200w, {{ ( $image.Fill "1400x602 webp Center" ).RelPermalink }} 1400w, {{ ( $image.Fill "1800x771 webp Center" ).RelPermalink }} 1800w'
+          sizes="(max-width: 576px) 576px, (max-width: 768px) 768px, (max-width: 992px) 992px, (max-width: 1200px) 1200px, (max-width: 1400px) 1400px, 1800px"
+          src='{{ ( $image.Fill "1800x771 webp Center" ).RelPermalink }}'
+          alt=""
+          style="filter: brightness(0.6)"
+        />
+      {{ end }}
+      <div class="d-flex align-items-center position-relative">
+        <div class="container py-5">
+          <div class="row py-5">
+            <div class="col-xl-7">
+              <div class="">
+                <h1 class="display-3 lh-1 mb-3 d-inline-block muse">{{ .heading }}</h1>
+                {{ if .lede }}
+                  <p class="lead mb-4 fs-4">{{ .lede }}</p>
                 {{ end }}
-              {{ end }}
+                {{ if .cta }}
+                  {{ range .cta }}
+                    <a class="btn btn-white btn-sm text-decoration-none" href="{{ .url }}">{{ .button_text }} <span class="fas fa-arrow-right"></span></a>
+                  {{ end }}
+                {{ end }}
+              </div>
             </div>
           </div>
         </div>
