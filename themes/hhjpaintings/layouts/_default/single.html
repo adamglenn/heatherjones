@@ -30,6 +30,12 @@
                   data-item-id="{{ $slug }}"
                   data-item-price="{{ .Params.price }}"
                   data-item-description="Oil on canvas{{ if and .Params.width .Params.height }}, {{ .Params.height }} x {{ .Params.width }}{{ end }}{{ if eq .Params.framing true }}, gallery-wrapped canvas{{ else }}, unframed{{ end }}"
+                  {{ if .Params.width }}
+                    data-item-width="{{ .Params.width }}"
+                  {{ end }}
+                  {{ if .Params.height }}
+                    data-item-height="{{ .Params.height }}"
+                  {{ end }}
                   {{ with .Params.featured_image }}
                     {{ $image = resources.Get . }}
                     data-item-image="{{ ( $image.Fit "200x200 Center" ).RelPermalink }}"
