@@ -29,24 +29,13 @@
                 <button class="snipcart-add-item btn btn-dark btn-sm"
                   data-item-id="{{ $slug }}"
                   data-item-price="{{ .Params.price }}"
-                  data-item-description="{{ .Description }}"
+                  data-item-description="Oil on canvas{{ if and .Params.width .Params.height }}, {{ .Params.height }} x {{ .Params.width }}{{ end }}{{ if eq .Params.framing true }}, gallery-wrapped canvas{{ else }}, unframed{{ end }}"
                   {{ with .Params.featured_image }}
                     {{ $image = resources.Get . }}
                     data-item-image="{{ ( $image.Fit "200x200 Center" ).RelPermalink }}"
                   {{ end }}
                   data-item-name="{{ .Title }}"
                   data-item-max-quantity="1"
-                  {{ if .Params.width }}
-                    data-item-width="{{ .Params.width }}"
-                  {{ end }}
-                  {{ if .Params.height }}
-                    data-item-height="{{ .Params.height }}"
-                  {{ end }}
-                  data-item-medium="Oil on Canvas"
-                  data-item-framing="Unframed"
-                  {{ if eq .Params.wrap true }}
-                    data-item-wrap="Gallery-wrapped Canvas"
-                  {{ end }}
                 >
                   <span class="fas fa-plus"></span> Add to Cart
                 </button>
