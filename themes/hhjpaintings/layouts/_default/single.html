@@ -12,6 +12,17 @@
             <img class="w-100 shadow-lg" src='{{ ( $image.Fit "2000x2000 Center" ).RelPermalink }}' alt="" />
           </div>
           <div class="col-xl-4">
+            <p>
+              Oil on Canvas
+              {{ if and .Params.height .Params.width }}
+                <br>{{ .Params.height }}" x {{ .Params.width }}"
+              {{ end }}
+              {{ if eq .Params.framing true }}
+                <br>Gallery-Wrapped Canvas
+              {{ else }}
+                <br>Unframed
+              {{ end }}
+            </p>
             {{ if ne .Params.sold true }}
               <div class="p-4 border border-1 border-dark bg-white shadow rounded mb-4">
                 <p class="h2">${{ .Params.price }}</p>

@@ -1,8 +1,8 @@
 hero:
   align: Left
   heading: Capturing life’s essence through brushstrokes.
-  lede: Experience art that speaks directly to the heart and ignites the imagination.
+  lede: Art that speaks to the heart and ignites the imagination.
   photo: /img/detail.jpg
   cta:
-    - button_text: View Collections
-      url: /collections
+    - button_text: About Heather
+      url: /about

@@ -59,6 +59,32 @@ collections:
       - { label: 'Description', name: 'description', widget: 'text', required: false }
       - { label: 'Price', name: 'price', widget: 'number', value_type: 'float', step: .01 }
       - { label: 'Sold', name: 'sold', widget: 'boolean', required: false }
+  - label: "Settings"
+    name: "settings"
+    create: false
+    editor:
+      preview: false
+    files:
+      - label: "Config"
+        name: "config"
+        file: "data/settings.yml"
+        editor:
+          preview: false
+        fields:
+          - { label: "Site Description", name: "description", widget: "text" }
+          - label: "Email"
+            name: "email"
+            widget: "string"
+            required: false
+          - label: "Social Media Accounts"
+            name: "social_media_accounts"
+            widget: "list"
+            required: false
+            fields:
+              - { label: "Platform", name: "platform", widget: "string" }
+              - { label: "Username", name: "username", widget: "string", required: false }
+              - { label: "URL", name: "url", widget: "string" }
+              - { label: "Icon Code", name: "icon_code", widget: "string", required: false }
   # - name: 'blog'
   #   label: 'Blog'
   #   folder: "content/posts"

@@ -12,11 +12,11 @@
             <div class="">
               <h1 class="display-3 lh-1 mb-3 d-inline-block muse">{{ .heading }}</h1>
               {{ if .lede }}
-                <p class="lead mb-4 fs-4 ms-xl-5">{{ .lede }}</p>
+                <p class="lead mb-4 fs-4">{{ .lede }}</p>
               {{ end }}
               {{ if .cta }}
                 {{ range .cta }}
-                  <a class="btn btn-white btn-sm text-decoration-none ms-xl-5" href="{{ .url }}">{{ .button_text }} <span class="fas fa-arrow-right"></span></a>
+                  <a class="btn btn-white btn-sm text-decoration-none" href="{{ .url }}">{{ .button_text }} <span class="fas fa-arrow-right"></span></a>
                 {{ end }}
               {{ end }}
             </div>

@@ -9,14 +9,18 @@
     </a>    
     <ul class="list-inline">
       <li class="list-inline-item"><a class="text-white text-decoration-none" href="/">Home</a></li>
-      <li class="list-inline-item"><a class="text-white text-decoration-none" href="/paintings">All Paintings</a></li>
-      <li class="list-inline-item"><a class="text-white text-decoration-none" href="/collections">Browse by Collection</a></li>
       <li class="list-inline-item"><a class="text-white text-decoration-none" href="/about">About</a></li>
     </ul>
-    <ul class="list-inline">
-      <li class="list-inline-item"><a class="text-white text-decoration-none" href="mailto:email@email.com"><span class="fas fa-envelope"></span> email@email.com</a></li>
-      <li class="list-inline-item"><a class="text-white text-decoration-none" href="#"><span class="fab fa-facebook"></span> Facebook</a></li>
-    </ul>
+    {{ if or site.Data.settings.email site.Data.settings.social_media_accounts }}
+      <ul class="list-inline">
+        {{ with site.Data.settings.email }}
+          <li class="list-inline-item"><a class="text-white text-decoration-none" href="mailto:{{ . }}"><span class="fas fa-envelope"></span> {{ . }}</a></li>
+        {{ end }}
+        {{ range site.Data.settings.social_media_accounts }}
+          <li class="list-inline-item"><a class="text-white text-decoration-none" href="{{ .url }}"><span class="fab fa-{{ .icon_code }}"></span> {{ .platform }}</a></li>
+        {{ end }}
+      </ul>
+    {{ end }}
     <p class="small">Copyright &copy; Heather Heiskell Jones {{ now.Year }}. All rights reserved.</p>
   </div>
 </footer>
