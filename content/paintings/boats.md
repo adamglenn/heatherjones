@@ -1,5 +1,5 @@
 ---
-title: "Boats in Harbor Collioure "
+title: "Boats in Collioure "
 date: 2024-07-29T15:27:00.000Z
 featured_image: /img/boats.jpg
 height: 24
