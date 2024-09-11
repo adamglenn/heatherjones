@@ -6,5 +6,5 @@ featured_image_alt: ""
 height: 30
 width: 40
 description: ""
-price: 1900
+price: 0
 ---
