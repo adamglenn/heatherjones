@@ -82,7 +82,7 @@
         <div class="modal-body">
           {{ with .Params.featured_image }}
             {{ $image = resources.Get . }}
-            <img class="w-100" src='{{ ( $image.Fit "2000x2000 Center" ).RelPermalink }}' />
+            <img loading="lazy" class="w-100" src='{{ ( $image.Fit "2000x2000 Center" ).RelPermalink }}' />
           {{ end }}
         </div>
       </div>
