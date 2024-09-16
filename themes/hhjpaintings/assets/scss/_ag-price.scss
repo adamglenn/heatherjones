@@ -1,0 +1,14 @@
+.ag-price {
+  opacity: 0;
+}
+
+.ag-cursor {
+  &:hover {
+    cursor: pointer !important; 
+    .ag-price {
+      opacity: 1;
+      transition: opacity .3s;
+      transition-timing-function: ease-in;
+    }
+  }
+}

@@ -4,17 +4,32 @@
 {{ $imageWidth := "" }}
 {{ $imageRatio := "" }}
 {{ $title := .Title }}
+{{ $price := "" }}
+{{ if ne .Params.sold true }}
+  {{ $price = .Params.price }}
+{{ end }}
 <div class="col-lg-6 col-xl-4 mb-4">
-  {{ with .Params.featured_image }}
-    {{ $image = resources.Get . }}
+  {{ if .Params.featured_image }}
+    {{ $image = resources.Get .Params.featured_image }}
     {{ with resources.Get $image }}
       {{ $imageHeight = float .Height }}
       {{ $imageWidth = float .Width }}
       {{ $imageRatio = div $imageHeight $imageWidth }}
       {{ $imageRatio = mul $imageRatio 100 }}
     {{ end }}
-    <div class="position-relative mb-2 ratio" style="--bs-aspect-ratio: {{ $imageRatio }}%">
-      <img alt="Painting of {{ $title }}" loading="lazy" data-bs-toggle="modal" data-bs-target="#{{ $slug }}-modal" class="w-100" src='{{ ( $image.Fit "960x640 Center" ).RelPermalink }}' />
+    <div class="position-relative ag-cursor" data-bs-toggle="modal" data-bs-target="#{{ $slug }}-modal">
+      <div class="position-relative mb-2 ratio" style="--bs-aspect-ratio: {{ $imageRatio }}%">
+        <img alt="Painting of {{ $title }}" loading="lazy" class="w-100" src='{{ ( $image.Fit "960x640 Center" ).RelPermalink }}' />
+      </div>
+      {{ if or (ne .Params.sold true) (ne .Params.price 0) }}
+        {{ if eq .Params.price 0 }}
+          <p class="ag-price position-absolute px-2 py-1 bg-primary h5 fw-bold bg-dark text-light" style="bottom: 1rem; right: 0;">N/A</p>
+        {{ else }}
+          <p class="ag-price position-absolute px-2 py-1 bg-primary h5 fw-bold bg-success text-light" style="bottom: 1rem; right: 0;">${{ .Params.price }}</p>
+        {{ end }}
+      {{ else if eq .Params.sold true }}
+        <div class="ag-price position-absolute px-2 py-1 bg-primary h5 fw-bold bg-danger text-light text-uppercase" style="bottom: 1rem; right: 0;">Sold</div>
+      {{ end }}
     </div>
   {{ end }}
   <div class="row">    
@@ -25,19 +40,9 @@
         {{ if and .Params.height .Params.width }}
           <br>{{ .Params.height }}" x {{ .Params.width }}"
         {{ end }}
-        {{ if eq .Params.framing true }}
-          <br>Gallery-Wrapped Canvas
-        {{ else }}
-          <br>Unframed
-        {{ end }}
       </p>
     </div>
     <div class="col-md-6 mb-4 mb-md-0">
-      {{ if ne .Params.sold true }}
-        <p class="mb-0 text-md-end mb-2 h5 fw-bold">${{ .Params.price }}</p>
-      {{ else }}
-        <div class="text-danger text-uppercase h5 fw-bold text-md-end">Sold</div>
-      {{ end }}
       {{ if ne .Params.sold true }}
         <div class="d-md-flex justify-content-end">
           <div class="btn-group my-auto">
