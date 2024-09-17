@@ -5,5 +5,5 @@ featured_image: /img/hinton-and-the-new.jpg
 height: 30
 width: 24
 description: Framed in Silver Frame
-price: 1300
+price: 1500
 ---
