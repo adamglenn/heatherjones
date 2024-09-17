@@ -5,5 +5,5 @@ featured_image: /img/humpback-near-costa-rica.jpg
 height: 24
 width: 18
 description: Oil on Panel
-price: 600
+price: 800
 ---
