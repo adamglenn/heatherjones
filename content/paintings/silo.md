@@ -5,7 +5,7 @@ featured_image: /img/silo.jpg
 height: 36
 width: 24
 framing: true
-price: 0.05
+price: 400
 featured: true
 collections:
   - structures
