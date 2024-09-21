@@ -53,7 +53,7 @@ collections:
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Image', name: 'featured_image', widget: 'image' }
       - { label: 'Image Alt Text', name: 'featured_image_alt', widget: 'text', required: false }
-      - { label: 'Collections', name: 'collections', widget: 'list', hint: "These should be consistent with other paintings of the same collection, all lowercase, no special characters, substitute hyphens for spaces e.g. ‘still-life’ (without quote marks)." }
+      - { label: 'Collections', name: 'collections', widget: 'list', hint: "These should be consistent with other paintings of the same collection and are case-sensitive e.g. don’t label one painting “Surises and Sunsets” and another “sunrises and sunsets”." }
       - { label: 'Height (inches)', name: 'height', widget: number, required: false }
       - { label: 'Width (inches)', name: 'width', widget: number, required: false }
       - { label: 'Gallery-Wrapped Canvas', name: 'framing', widget: 'boolean', required: false }

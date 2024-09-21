@@ -11,5 +11,5 @@ timeout = '60s'
 
 [caches]
   [caches.images]
-    dir = ':resourceDir/_gen'
+    dir = ':cacheDir/:project'
     maxAge = "800h"
