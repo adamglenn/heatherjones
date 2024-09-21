@@ -8,3 +8,8 @@ timeout = '60s'
   collection = 'collections'
   category = 'categories'
   tag = 'tags'
+
+[caches]
+  [caches.images]
+    dir = ':resourceDir/_gen'
+    maxAge = "800h"
