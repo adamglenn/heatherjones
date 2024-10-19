@@ -1,5 +1,6 @@
 ---
 title: "Boats in Collioure #2"
+published: true
 date: 2024-09-11T10:35:00.000Z
 featured_image: /img/boats-in-collioure-2.jpg
 height: 20
