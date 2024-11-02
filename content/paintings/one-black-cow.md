@@ -6,6 +6,6 @@ featured_image: /img/one-black-cow.jpg
 height: 20
 width: 20
 framing: true
-description: Private Collection
-price: 0
+description: ""
+price: 900
 ---
