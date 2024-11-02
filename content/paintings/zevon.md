@@ -1,6 +1,6 @@
 ---
 title: Zevon
-published: false
+published: true
 date: 2024-10-03T06:28:00.000Z
 featured_image: /img/zevon.jpg
 collections:
@@ -8,4 +8,5 @@ collections:
 height: 8
 width: 11
 price: 0
+sold: true
 ---
