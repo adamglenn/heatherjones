@@ -6,5 +6,5 @@ featured_image: /img/flowers-and-vase.jpg
 height: 20
 width: 20
 framing: true
-price: 700
+price: 800
 ---
