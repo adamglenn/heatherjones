@@ -6,5 +6,5 @@ featured_image: /img/red-rocks.jpg
 height: 18
 width: 14
 description: Oil on panel
-price: 600
+price: 700
 ---
