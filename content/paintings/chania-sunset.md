@@ -8,5 +8,5 @@ collections:
 height: 18
 width: 14
 description: Oil on Panel
-price: 600
+price: 700
 ---
