@@ -7,5 +7,5 @@ collections:
   - trees-and-woods
 height: 14
 width: 14
-price: 500
+price: 600
 ---
