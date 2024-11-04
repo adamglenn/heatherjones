@@ -7,6 +7,6 @@ collections:
   - trees-and-woods
 height: 20
 width: 16
-description: Oil on Panel
-price: 750
+description: Private Collection
+price: 0
 ---
