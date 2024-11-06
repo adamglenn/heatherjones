@@ -15,9 +15,6 @@
         {{ with site.Data.settings.email }}
           <li class="list-inline-item"><a class="text-white text-decoration-none" href="mailto:{{ . }}"><span class="fas fa-envelope"></span> {{ . }}</a></li>
         {{ end }}
-        {{ range site.Data.settings.social_media_accounts }}
-          <li class="list-inline-item"><a class="text-white text-decoration-none" href="{{ .url }}"><span class="fab fa-{{ .icon_code }}"></span> {{ .platform }}</a></li>
-        {{ end }}
       </ul>
     {{ end }}
     <p class="small">Copyright &copy; Heather Heiskell Jones {{ now.Year }}. All rights reserved.</p>

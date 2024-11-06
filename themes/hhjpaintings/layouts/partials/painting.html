@@ -23,12 +23,12 @@
       </div>
       {{ if or (ne .Params.sold true) (ne .Params.price 0) }}
         {{ if eq .Params.price 0 }}
-          <p class="ag-price position-absolute px-2 py-1 bg-primary h5 fw-bold bg-dark text-light times" style="bottom: 1rem; right: 0;">N/A</p>
+          <p class="ag-price position-absolute px-2 py-1 bg-primary h5 bg-dark text-light muse" style="bottom: 1rem; right: 0;">N/A</p>
         {{ else }}
-          <p class="ag-price position-absolute px-2 py-1 bg-primary h5 fw-bold bg-success text-light times" style="bottom: 1rem; right: 0;">${{ .Params.price }}</p>
+          <p class="ag-price position-absolute px-2 py-1 bg-primary h5 bg-white text-dark muse" style="bottom: 1rem; right: 0;">${{ .Params.price }}</p>
         {{ end }}
       {{ else if eq .Params.sold true }}
-        <div class="ag-price position-absolute px-2 py-1 bg-primary h5 fw-bold bg-danger text-light text-uppercase times" style="bottom: 1rem; right: 0;">Sold</div>
+        <div class="ag-price position-absolute px-2 py-1 bg-primary h5 bg-danger text-light text-uppercase muse" style="bottom: 1rem; right: 0;">Sold</div>
       {{ end }}
     </div>
   {{ end }}
@@ -43,40 +43,9 @@
       </p>
     </div>
     <div class="col-md-6 mb-4 mb-md-0">
-      {{ if ne .Params.sold true }}
-        <div class="d-md-flex justify-content-end">
-          <div class="btn-group my-auto">
-            {{ if ne .Params.price 0 }}
-              <button class="snipcart-add-item btn btn-dark btn-sm"
-                data-item-id="{{ $slug }}"
-                data-item-price="{{ .Params.price }}"
-                data-item-description="Oil on canvas{{ if and .Params.width .Params.height }}, {{ .Params.height }} x {{ .Params.width }}{{ end }}{{ if eq .Params.framing true }}, gallery-wrapped canvas{{ else }}, unframed{{ end }}"
-                {{ if .Params.width }}
-                  data-item-width="{{ .Params.width }}"
-                {{ end }}
-                {{ if .Params.height }}
-                  data-item-height="{{ .Params.height }}"
-                {{ end }}
-                {{ with .Params.featured_image }}
-                  {{ $image = resources.Get . }}
-                  data-item-image="{{ ( $image.Fit "200x200 Center" ).RelPermalink }}"
-                {{ end }}
-                data-item-name="{{ .Title }}"
-                data-item-max-quantity="1"
-                data-item-url="{{ .RelPermalink }}"
-                data-item-max-quantity="1"
-              >
-                <span class="fas fa-plus"></span> Add to Cart
-              </button>
-            {{ end }}
-            <a class="btn btn-outline-dark btn-sm" href="{{ .RelPermalink }}">View Page</a>
-          </div>
-        </div>
-      {{ else }}
-        <div class="d-flex justify-content-end">
-          <a class="btn btn-outline-dark btn-sm" href="{{ .RelPermalink }}">View Page</a>
-        </div>
-      {{ end }}
+      <div class="d-flex justify-content-end">
+        <a class="btn btn-outline-dark btn-sm" href="{{ .RelPermalink }}">View Page</a>
+      </div>
     </div>
   </div>
   <div class="modal fade" id="{{ $slug }}-modal" tabindex="-1" aria-labelledby="{{ $slug }}-modal-label" aria-hidden="true">
