@@ -21,7 +21,16 @@
                 <br>Gallery-Wrapped Canvas
               {{ end }}
             </p>
-            {{ partial "terms.html" (dict "taxonomy" "collections" "page" .) }}
+            {{ if ne .Params.sold true }}
+              {{ if ne .Params.price 0 }}
+                <p class="h2 muse">${{ .Params.price }}</p>
+              {{ end }}
+              <div class="mt-4">
+                {{ partial "terms.html" (dict "taxonomy" "collections" "page" .) }}
+              </div>
+            {{ else }}
+              <p class="text-danger text-uppercase h2 mb-4 mt-4">Sold</p>
+            {{ end }}
           </div>
         </div>        
       {{ else }}
