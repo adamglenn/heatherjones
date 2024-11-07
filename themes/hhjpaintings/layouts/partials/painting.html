@@ -47,9 +47,6 @@
         {{ if and .Params.height .Params.width }}
           <span class="d-block">{{ .Params.height }}" x {{ .Params.width }}"</span>
         {{ end }}
-        {{ if eq .Params.private true }}
-          <span class="d-block">Private Collection</span>
-        {{ end }}
       </p>
     </div>
     <div class="col-6 mb-4 mb-md-0">
