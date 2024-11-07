@@ -1,7 +1,7 @@
 {{ with site.Data.homepage.hero }}
   {{ $image := resources.Get .photo }}
-  <main class="py-5 bg-dark text-white position-relative w-100 h-100 d-flex align-items-center">
-    <div class="w-100">
+  <main class="py5 bg-dark text-white position-relative w-100 h-100 d-flex align-items-center">
+    <div class="w-100 py-5">
       {{ with .photo }}
         <img
           class="ag-bg-img"
@@ -19,12 +19,7 @@
               <div class="">
                 <h1 class="display-3 lh-1 mb-3 d-inline-block elgraine-bold" style="text-shadow: -2px 2px #000">{{ .heading }}</h1>
                 {{ if .lede }}
-                  <p class="lead mb-4 fs-4 fw-bold">{{ .lede }}</p>
-                {{ end }}
-                {{ if .cta }}
-                  {{ range .cta }}
-                    <a class="btn btn-white btn-sm text-decoration-none" href="{{ .url }}">{{ .button_text }} <span class="fas fa-arrow-right"></span></a>
-                  {{ end }}
+                  <p class="lead mb-4 fs-3 fw-bold">{{ .lede }}</p>
                 {{ end }}
               </div>
             </div>
