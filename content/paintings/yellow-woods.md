@@ -7,6 +7,6 @@ collections:
   - trees-and-woods
 height: 18
 width: 24
-framing: true
+framing: Framed
 price: 800
 ---

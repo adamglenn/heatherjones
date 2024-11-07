@@ -17,9 +17,6 @@
               {{ if and .Params.height .Params.width }}
                 <br>{{ .Params.height }}" x {{ .Params.width }}"
               {{ end }}
-              {{ if eq .Params.framing true }}
-                <br>Gallery-Wrapped Canvas
-              {{ end }}
             </p>
             {{ if ne .Params.sold true }}
               {{ if ne .Params.price 0 }}

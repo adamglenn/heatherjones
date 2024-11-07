@@ -7,6 +7,6 @@ collections:
   - dogs
 height: 20
 width: 18
-description: Private Collection
+private: true
 price: 0
 ---

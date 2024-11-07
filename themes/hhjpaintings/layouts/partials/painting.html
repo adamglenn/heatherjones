@@ -36,9 +36,22 @@
     <div class="col-6">
       <h2 class="h4 muse mb-1">{{ .Params.Title }}</h2>
       <p class="small">
-        Oil on Canvas
+        {{ if .Params.medium }}
+          <span class="d-block">{{ .Params.medium }}</span>
+        {{ else }}
+          <span class="d-block">Oil on Canvas</span>
+        {{ end }}
+        {{ if .Params.description }}
+          <span class="d-block">{{ .Params.description }}</span>
+        {{ end }}
+        {{ if .Params.framing }}
+          <span class="d-block">{{ .Params.framing }}</span>
+        {{ end }}
         {{ if and .Params.height .Params.width }}
-          <br>{{ .Params.height }}" x {{ .Params.width }}"
+          <span class="d-block">{{ .Params.height }}" x {{ .Params.width }}"</span>
+        {{ end }}
+        {{ if eq .Params.private true }}
+          <span class="d-block">Private Collection</span>
         {{ end }}
       </p>
     </div>
