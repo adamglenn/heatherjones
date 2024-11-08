@@ -1,5 +1,7 @@
 <section class="py-5 text-center bg-light" aria-labelledby="commission-label">
   <div class="container">
-    <p class="fs-5 mb-0">Should you be interested in purchasing or commissioning a painting, please <a class="text-dark" href="mailto:hhjpaintings@gmail.com">contact Heather</a>.</p>
+    <div class="fs-5">
+      {{ site.Data.settings.commission | markdownify }}
+    </div>
   </div>
 </section>
