@@ -2,7 +2,7 @@
   {{ $image := "" }}
   {{ $slug := .Title | urlize }}
   <main class="pb-5">
-    <div class="container">
+    <div class="container links-dark">
       {{ partial "breadcrumbs.html" . }}
       <h1 class="display-4 mb-4 mt-5 muse">{{ .Title }}</h1>
       {{ if eq .Type "paintings" }}
@@ -28,9 +28,7 @@
                 <span class="d-block">Private Collection</span>
               {{ end }}
             </p>
-            {{ if .Params.description }}
-              <p>{{ .Params.description }}</p>
-            {{ end }}
+            {{ site.Data.settings.commission | markdownify }}
             {{ if ne .Params.sold true }}
               {{ if ne .Params.price 0 }}
                 <p class="h2 muse">${{ .Params.price }}</p>

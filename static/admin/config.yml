@@ -59,7 +59,6 @@ collections:
       - { label: 'Framing', name: 'framing', widget: 'text', required: false }
       - { label: 'Height (inches)', name: 'height', widget: number, required: false }
       - { label: 'Width (inches)', name: 'width', widget: number, required: false }
-      - { label: 'Description', name: 'description', widget: 'text', required: false }
       - { label: 'Private Collection', name: 'private', widget: 'boolean', default: false, required: false }
       - { label: 'Price', name: 'price', widget: 'number', value_type: 'float', step: .01 }
       - { label: 'Sold', name: 'sold', widget: 'boolean', required: false }

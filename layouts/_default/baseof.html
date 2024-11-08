@@ -12,7 +12,9 @@
     
     {{ block "main" . }}{{ end }}
 
-    {{ partial "commission.html" . }}
+    {{ if .IsHome }}
+      {{ partial "commission.html" . }}
+    {{ end }}
     
     <footer>
       {{ partial "footer.html" . }}
