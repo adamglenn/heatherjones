@@ -2,9 +2,10 @@
 title: Chania Swimming Hole
 published: true
 date: 2024-11-03T16:08:00.000Z
-featured_image: /img/chania-swimming-hole.jpg
+featured_image: /img/chania-swimming-hole-unframed.jpg
+framing: Framed in Silver Frame
 height: 12
 width: 16
-framing: Framed in Silver Frame
+private: true
 price: 0
 ---
