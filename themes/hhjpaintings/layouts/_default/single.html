@@ -2,7 +2,7 @@
   {{ $image := "" }}
   {{ $slug := .Title | urlize }}
   <main class="pb-5">
-    <div class="container links-dark">
+    <div class="container links-dark pb-5">
       {{ partial "breadcrumbs.html" . }}
       <h1 class="display-4 mb-4 mt-5 muse">{{ .Title }}</h1>
       {{ if eq .Type "paintings" }}
