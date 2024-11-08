@@ -8,6 +8,7 @@ collections:
   - sunrises-and-sunsets
 height: 30
 width: 40
-description: ""
+private: true
 price: 0
+description: ""
 ---
