@@ -5,6 +5,13 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
+
+{{ $description := "" }}
+{{ if site.Data.settings.description }}
+  {{ $description = site.Data.settings.description }}
+{{ end }}
+
+<meta name="description" content="{{ $description }}">
 {{ partial "head/social.html" . }}
 {{ partial "head/favicon.html" . }}
 {{ partialCached "head/css.html" . }}
