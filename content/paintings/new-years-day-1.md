@@ -6,6 +6,7 @@ featured_image: /img/new-year-s-day-1.jpg
 collections:
   - sunrises-and-sunsets
   - trees-and-woods
+private: true
 price: 0
 sold: false
 ---
