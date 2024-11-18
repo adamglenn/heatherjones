@@ -7,5 +7,6 @@ featured_image_alt: Private Collection
 height: 20
 width: 16
 description: ""
+private: true
 price: 0
 ---
