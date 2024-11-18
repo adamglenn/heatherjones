@@ -22,13 +22,13 @@
         <img alt="Painting of {{ $title }}" loading="lazy" class="w-100" src='{{ ( $image.Fit "960x640 Center" ).RelPermalink }}' />
       </div>
       {{ if or (ne .Params.sold true) (ne .Params.price 0) }}
-        {{ if eq .Params.price 0 }}
-          <p class="ag-price position-absolute px-2 py-1 bg-primary h5 bg-dark text-light muse" style="bottom: 1rem; right: 0;">N/A</p>
-        {{ else }}
+        {{ if ne .Params.price 0 }}
           <p class="ag-price position-absolute px-2 py-1 bg-primary h5 bg-white text-dark muse" style="bottom: 1rem; right: 0;">${{ .Params.price }}</p>
         {{ end }}
-      {{ else if eq .Params.sold true }}
-        <div class="ag-price position-absolute px-2 py-1 bg-primary h5 bg-danger text-light text-uppercase muse" style="bottom: 1rem; right: 0;">Sold</div>
+      {{ else }}
+        {{ if eq .Params.sold true }}
+          <div class="ag-price position-absolute px-2 py-1 bg-primary h5 bg-white text-dark text-uppercase muse" style="bottom: 1rem; right: 0;">Sold</div>
+        {{ end }}
       {{ end }}
     </div>
   {{ end }}
