@@ -6,7 +6,7 @@ featured_image: /img/josie-and-pete.jpg
 collections:
   - dogs
 height: 11
-width: 15
+width: 16
 private: true
 price: 0
 ---
