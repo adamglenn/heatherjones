@@ -9,6 +9,6 @@ framing: Gallery Wrapped Canvas
 height: 24
 width: 12
 private: false
-price: 350
+price: 450
 sold: true
 ---
