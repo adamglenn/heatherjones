@@ -8,4 +8,5 @@ collections:
 height: 40
 width: 30
 price: 900
+sold: true
 ---
