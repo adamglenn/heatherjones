@@ -7,6 +7,7 @@ collections:
   - trees-and-woods
 height: 24
 width: 18
-price: 800
-sold: true
+private: true
+price: 0
+sold: false
 ---
