@@ -8,6 +8,6 @@ collections:
 height: 40
 width: 30
 private: true
-price: 900
+price: 0
 sold: false
 ---
