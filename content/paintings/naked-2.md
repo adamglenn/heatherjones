@@ -5,6 +5,6 @@ date: 2024-12-12T09:59:00.000Z
 featured_image: /img/naked.jpg
 height: 14
 width: 18
-private: false
+private: true
 price: 800
 ---
