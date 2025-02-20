@@ -6,5 +6,5 @@ featured_image: /img/naked.jpg
 height: 14
 width: 18
 private: true
-price: 800
+price: 0
 ---
