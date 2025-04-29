@@ -6,5 +6,5 @@ featured_image: /img/mar-vista.jpg
 height: 20
 width: 16
 private: false
-price: 1000
+price: 2000
 ---
