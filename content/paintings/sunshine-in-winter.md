@@ -6,4 +6,5 @@ featured_image: /img/sunshine-in-winter.jpg
 height: 20
 width: 16
 price: 750
+sold: true
 ---
