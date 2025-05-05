@@ -6,5 +6,5 @@ featured_image: /img/a-walk-in-the-winter-woods-with-my-golden.jpg
 height: 20
 width: 16
 private: true
-price: 1000
+price: 0
 ---
