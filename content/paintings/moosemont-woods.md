@@ -1,6 +1,6 @@
 ---
 title: Moosemont Woods
-published: true
+draft: false
 date: 2025-05-05T17:51:00.000Z
 featured_image: /img/moosemont-woods.jpg
 framing: Framed in silver frame

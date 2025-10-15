@@ -1,6 +1,6 @@
 ---
 title: Flowers in Copper Vase
-published: true
+draft: false
 date: 2024-09-12T10:52:00.000Z
 featured_image: /img/flowers-in-copper-vase.jpg
 height: 24

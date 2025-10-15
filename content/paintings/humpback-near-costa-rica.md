@@ -1,6 +1,6 @@
 ---
 title: Humpback near Costa Rica
-published: true
+draft: false
 date: 2024-09-12T10:34:00.000Z
 featured_image: /img/humpback-near-costa-rica.jpg
 medium: Oil on Panel

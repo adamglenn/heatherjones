@@ -1,6 +1,6 @@
 ---
 title: Naked
-published: true
+draft: false
 date: 2024-12-12T09:59:00.000Z
 featured_image: /img/naked.jpg
 height: 14

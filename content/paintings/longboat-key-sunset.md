@@ -1,6 +1,6 @@
 ---
 title: Longboat Key Sunset
-published: true
+draft: false
 date: 2024-11-05T09:24:00.000Z
 featured_image: /img/longboat-key-sunset.jpg
 collections:

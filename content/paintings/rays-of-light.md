@@ -1,6 +1,6 @@
 ---
 title: Rays of Light
-published: true
+draft: false
 date: 2024-09-12T10:37:00.000Z
 featured_image: /img/rays-of-light.jpg
 collections:

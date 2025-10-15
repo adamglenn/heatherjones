@@ -1,6 +1,6 @@
 ---
 title: Monroe County Farm
-published: true
+draft: false
 date: 2024-09-10T12:01:00.000Z
 featured_image: /img/old-houses.jpg
 collections:

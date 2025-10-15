@@ -50,7 +50,7 @@ collections:
     sortable_fields: ['date', 'title']
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Show', name: 'published', widget: 'boolean', required: true }
+      - { label: 'Draft', name: 'draft', widget: 'boolean', default: true, required: true }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Image', name: 'featured_image', widget: 'image' }
       - { label: 'Image Alt Text', name: 'featured_image_alt', widget: 'text', required: false }

@@ -1,6 +1,6 @@
 ---
 title: Spring on Moosemont
-published: true
+draft: false
 date: 2024-09-12T11:48:00.000Z
 featured_image: /img/spring-on-moosemont.jpg
 collections:

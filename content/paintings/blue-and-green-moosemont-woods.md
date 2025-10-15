@@ -1,6 +1,6 @@
 ---
 title: Blue and Green Moosemont Woods
-published: true
+draft: false
 date: 2024-09-13T08:53:00.000Z
 featured_image: /img/blue-and-green-moosemont-woods.jpg
 collections:

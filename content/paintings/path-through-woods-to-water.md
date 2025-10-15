@@ -1,6 +1,6 @@
 ---
 title: Path Through Woods to Water
-published: true
+draft: false
 date: 2025-01-02T12:43:00.000Z
 featured_image: /img/path-through-woods-to-water.jpg
 collections:

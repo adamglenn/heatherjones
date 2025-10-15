@@ -1,6 +1,6 @@
 ---
 title: Beta Lane in Fall
-published: true
+draft: false
 date: 2024-11-05T09:21:00.000Z
 featured_image: /img/beta-lane-in-fall.jpg
 collections:

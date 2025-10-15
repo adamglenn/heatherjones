@@ -1,6 +1,6 @@
 ---
 title: Hilton Head Sail Boat
-published: true
+draft: false
 date: 2024-11-03T16:17:00.000Z
 featured_image: /img/hilton-head-sail-boat.jpg
 height: 18

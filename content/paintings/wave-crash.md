@@ -1,6 +1,6 @@
 ---
 title: Wave Crash
-published: true
+draft: false
 date: 2024-12-12T10:05:00.000Z
 featured_image: /img/wave-crash.jpg
 height: 14

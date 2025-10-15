@@ -1,6 +1,6 @@
 ---
 title: Red Sunset
-published: true
+draft: false
 date: 2024-12-04T10:24:00.000Z
 featured_image: /img/red-sunset.jpg
 collections:

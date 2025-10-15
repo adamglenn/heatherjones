@@ -1,8 +1,7 @@
 hero:
   align: Left
-  heading: Capturing the essence of life through brushstrokes.
-  lede: Art that speaks to the heart and ignites the imagination.
-  photo: /img/detail.jpg
+  heading: Art that speaks to the heart and ignites the imagination.
+  photo: /img/trees-by-the-river-hero.jpg
   cta:
     - button_text: About Heather
       url: /about

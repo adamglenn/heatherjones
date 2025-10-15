@@ -1,6 +1,6 @@
 ---
 title: Reflections
-published: true
+draft: false
 date: 2024-09-12T10:47:00.000Z
 featured_image: /img/reflections.jpg
 collections:

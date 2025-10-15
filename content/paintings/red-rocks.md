@@ -1,6 +1,6 @@
 ---
 title: Red Rocks
-published: true
+draft: false
 date: 2024-09-13T09:13:00.000Z
 featured_image: /img/red-rocks.jpg
 height: 18

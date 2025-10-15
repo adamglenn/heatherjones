@@ -1,6 +1,6 @@
 ---
 title: September Sunset on Moosemont
-published: true
+draft: false
 date: 2025-09-23T11:45:00.000-04:00
 featured_image: /img/september-sunset-on-moosemont.jpg
 featured_image_alt: ""

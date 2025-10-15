@@ -1,6 +1,6 @@
 ---
 title: Sarton Mountain Light
-published: true
+draft: false
 date: 2024-09-12T12:18:00.000Z
 featured_image: /img/sarton-mountain-light.jpg
 collections:

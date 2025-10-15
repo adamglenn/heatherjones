@@ -1,6 +1,6 @@
 ---
 title: Skinny Trees with Colorful Sky
-published: true
+draft: false
 date: 2024-11-25T09:44:00.000Z
 featured_image: /img/skinny-trees-with-colorful-sky.jpg
 collections:

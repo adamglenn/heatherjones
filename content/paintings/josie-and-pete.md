@@ -1,6 +1,6 @@
 ---
 title: Josie and Pete
-published: true
+draft: false
 date: 2024-11-19T11:48:00.000Z
 featured_image: /img/josie-and-pete.jpg
 collections:

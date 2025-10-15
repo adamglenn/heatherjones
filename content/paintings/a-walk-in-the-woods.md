@@ -1,6 +1,6 @@
 ---
 title: A Walk in the Woods
-published: true
+draft: false
 date: 2024-10-22T09:19:00.000Z
 featured_image: /img/a-walk-in-the-woods.jpg
 collections:

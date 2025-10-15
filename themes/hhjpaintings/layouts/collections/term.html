@@ -1,0 +1,13 @@
+{{ define "main" }}
+  <section class="py-5" aria-labelledby="paintings-label">
+    <div class="container">
+      {{ partial "breadcrumbs.html" . }}
+      <h1 id="taxonomy-label" class="display-4 mb-5 mt-5 muse">{{ .Title }}</h1>
+      <div class="row gx-4" data-masonry='{"percentPosition": true }'>
+        {{ range .Pages.ByDate.Reverse }}
+          {{ partial "painting.html" . }}
+        {{ end }}
+      </div>
+    </div>
+  </section>
+{{ end }}

@@ -1,6 +1,6 @@
 ---
 title: Snow Tracks
-published: true
+draft: false
 date: 2024-12-04T10:42:00.000Z
 featured_image: /img/snow-tracks.jpg
 collections:
