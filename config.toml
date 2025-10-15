@@ -2,7 +2,7 @@ baseURL = 'https://heatherheiskelljones.netlify.app/'
 languageCode = 'en-us'
 title = 'Heather Heiskell Jones'
 theme = 'hhjpaintings'
-timeout = '60s'
+timeout = '120s'
 
 [taxonomies]
   collection = 'collections'
