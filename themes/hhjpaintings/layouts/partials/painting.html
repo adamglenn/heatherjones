@@ -1,0 +1,74 @@
+{{ $image := "" }}
+{{ $slug := .Title | urlize }}
+{{ $imageHeight := "" }}
+{{ $imageWidth := "" }}
+{{ $imageRatio := "" }}
+{{ $title := .Title }}
+{{ $price := "" }}
+{{ if ne .Params.sold true }}
+  {{ $price = .Params.price }}
+{{ end }}
+<div class="col-lg-6 col-xl-4 mb-4">
+  {{ if .Params.featured_image }}
+    {{ $image = resources.Get .Params.featured_image }}
+    {{ with resources.Get $image }}
+      {{ $imageHeight = float .Height }}
+      {{ $imageWidth = float .Width }}
+      {{ $imageRatio = div $imageHeight $imageWidth }}
+      {{ $imageRatio = mul $imageRatio 100 }}
+    {{ end }}
+    <div class="position-relative ag-cursor" data-bs-toggle="modal" data-bs-target="#{{ $slug }}-modal">
+      <div class="position-relative mb-2 ratio" style="--bs-aspect-ratio: {{ $imageRatio }}%">
+        <img alt="Painting of {{ $title }}" loading="lazy" class="w-100" src='{{ ( $image.Fit "960x640 Center" ).RelPermalink }}' />
+      </div>
+      {{ if or (ne .Params.sold true) (ne .Params.price 0) }}
+        {{ if ne .Params.price 0 }}
+          <p class="ag-price position-absolute px-2 py-1 bg-primary h5 bg-white text-dark muse" style="bottom: 1rem; right: 0;">${{ .Params.price }}</p>
+        {{ end }}
+      {{ else }}
+        {{ if eq .Params.sold true }}
+          <div class="ag-price position-absolute px-2 py-1 bg-primary h5 bg-white text-dark text-uppercase muse" style="bottom: 1rem; right: 0;">Sold</div>
+        {{ end }}
+      {{ end }}
+    </div>
+  {{ end }}
+  <div class="row">    
+    <div class="col-6">
+      <h2 class="h4 muse mb-1">{{ .Params.Title }}</h2>
+      <p class="small">
+        {{ if .Params.medium }}
+          <span class="d-block">{{ .Params.medium }}</span>
+        {{ else }}
+          <span class="d-block">Oil on Canvas</span>
+        {{ end }}
+        {{ if .Params.framing }}
+          <span class="d-block">{{ .Params.framing }}</span>
+        {{ end }}
+        {{ if and .Params.height .Params.width }}
+          <span class="d-block">{{ .Params.height }}" x {{ .Params.width }}"</span>
+        {{ end }}
+      </p>
+    </div>
+    <div class="col-6 mb-4 mb-md-0">
+      <div class="d-flex justify-content-end">
+        <a class="btn btn-outline-dark btn-sm" href="{{ .RelPermalink }}">View Page</a>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="{{ $slug }}-modal" tabindex="-1" aria-labelledby="{{ $slug }}-modal-label" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h1 muse" id="{{ $slug }}-modal-label">{{ .Title }}</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          {{ with .Params.featured_image }}
+            {{ $image = resources.Get . }}
+            <img loading="lazy" class="w-100" src='{{ ( $image.Fit "2000x2000 Center" ).RelPermalink }}' />
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

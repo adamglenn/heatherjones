@@ -1,0 +1,17 @@
+{{ $pages := where site.RegularPages "Type" "paintings" }}
+{{ $numberOfCollections := 0 }}
+{{ $last := 0 }}
+{{ $isHome := .IsHome }}
+<section class="py-5" aria-labelledby="paintings-label">
+  <div class="container">
+    {{ if .IsHome }}
+      <h2 id="paintings-label" class="display-4 mb-3 muse">Gallery</h2>
+      <p class="mb-4">* All paintings are unframed (unless otherwise stated) with no hanging mechanism / hardware.</p>
+    {{ end }}
+    <div class="row gx-4" data-masonry='{"percentPosition": true }'>
+      {{ range $pages.ByDate.Reverse }}
+        {{ partial "painting.html" . }}
+      {{ end }}
+    </div>
+  </div>
+</section>

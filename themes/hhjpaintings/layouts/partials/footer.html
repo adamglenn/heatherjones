@@ -1,0 +1,23 @@
+<footer class="py-5 bg-dark text-white">
+  <div class="container position-relative py-5 text-center">
+    <a class="mb-5 p-4 text-decoration-none muse text-white d-flex justify-content-center align-items-center" href="/">
+      <img class="me-2" src="/img/h-logo-texture.webp" width="80px;" alt="H Logo" />
+      <div class="text-center">
+        <span class="h2 d-block mb-1">{{ site.Title }}</span>
+      </div>
+    </a>    
+    <ul class="list-inline">
+      <li class="list-inline-item"><a class="text-white text-decoration-none" href="/">Home</a></li>
+      <li class="list-inline-item"><a class="text-white text-decoration-none" href="/about">About</a></li>
+    </ul>
+    {{ if or site.Data.settings.email site.Data.settings.social_media_accounts }}
+      <ul class="list-inline">
+        {{ with site.Data.settings.email }}
+          <li class="list-inline-item"><a class="text-white text-decoration-none" href="mailto:{{ . }}"><span class="fas fa-envelope"></span> {{ . }}</a></li>
+        {{ end }}
+      </ul>
+    {{ end }}
+    <p class="small">Copyright &copy; Heather Heiskell Jones {{ now.Year }}. All rights reserved.</p>
+  </div>
+</footer>
+

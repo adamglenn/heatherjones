@@ -1,0 +1,53 @@
+{{ define "main" }}
+  {{ $image := "" }}
+  {{ $slug := .Title | urlize }}
+  <main class="pb-5">
+    <div class="container links-dark pb-5">
+      {{ partial "breadcrumbs.html" . }}
+      <h1 class="display-4 mb-4 mt-5 muse">{{ .Title }}</h1>
+      {{ if eq .Type "paintings" }}
+        {{ $image = resources.Get .Params.featured_image }}
+        <div class="row">
+          <div class="col-xl-8 mb-4 mb-xl-0">
+            <img class="w-100 shadow-lg" src='{{ ( $image.Fit "2000x2000 Center" ).RelPermalink }}' alt="" />
+          </div>
+          <div class="col-xl-4">
+            <p>
+              {{ if .Params.medium }}
+                <span class="d-block">{{ .Params.medium }}</span>
+              {{ else }}
+                <span class="d-block">Oil on Canvas</span>
+              {{ end }}
+              {{ if .Params.framing }}
+                <span class="d-block">{{ .Params.framing }}</span>
+              {{ end }}
+              {{ if and .Params.height .Params.width }}
+                <span class="d-block">{{ .Params.height }}" x {{ .Params.width }}"</span>
+              {{ end }}
+              {{ if eq .Params.private true }}
+                <span class="d-block">Private Collection</span>
+              {{ end }}
+            </p>
+            {{ if ne .Params.sold true }}
+              {{ if ne .Params.price 0 }}
+                <p class="h2 muse mb-3">${{ .Params.price }}</p>
+              {{ end }}
+              <p>{{ site.Data.settings.commission | markdownify }}</p>
+              <div class="mt-4">
+                {{ partial "terms.html" (dict "taxonomy" "collections" "page" .) }}
+              </div>
+            {{ else }}
+              <p class="text-danger text-uppercase h2 mb-4 mt-4">Sold</p>
+            {{ end }}
+          </div>
+        </div>        
+      {{ else }}
+        {{ partial "terms.html" (dict "taxonomy" "collections" "page" .) }}
+        {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+        {{ $dateHuman := .Date | time.Format ":date_long" }}
+        <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+        {{ .Content }}
+      {{ end }}
+    </div>
+  </main>
+{{ end }}

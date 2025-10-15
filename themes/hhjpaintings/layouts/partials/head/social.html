@@ -1,0 +1,24 @@
+{{ $featuredImg := "" }}
+<meta name="twitter:card" content="{{ if .Params.featured_image }}summary_large_image{{else}}summary{{end}}">
+<meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} &middot; {{ .Site.Title }}{{ end }}">
+<meta name="twitter:description" content="{{ if .IsHome }}{{ .Description }}{{ else }}{{ htmlEscape .Summary }}{{ end }}">
+<meta name="twitter:site" content="{{ .Site.Params.twitter }}">
+<meta name="twitter:creator" content="{{ .Site.Params.twitter }}">
+{{ with .Params.featured_image }}
+  {{ $featuredImg = resources.Get . }}
+  <meta name="twitter:image" content='{{ ( $featuredImg.Fill "1600x900 Center" ).RelPermalink }}'>
+{{ end }}
+
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} &middot; {{ .Site.Title }}{{ end }}">
+<meta property="og:description" content="{{ if .IsHome }}{{ .Description }}{{ else }}{{ htmlEscape .Summary }}{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+{{ with .Params.featured_image }}
+  {{ $featuredImg = resources.Get . }}
+  <meta property="og:image" content='{{ ( $featuredImg.Fill "1200x628 Center" ).RelPermalink }}'>
+  <meta property="og:image:secure_url" content='{{ ( $featuredImg.Fill "1200x628 Center" ).RelPermalink }}'>
+{{ end }}
+{{ range .Params.categories }}<meta property="article:section" content="{{ . }}">{{ end }}
+{{ if isset .Params "date" }}<meta property="article:published_time" content="{{ (time .Date).Format "2006-01-02T15:04:05Z" }}">{{ end }}

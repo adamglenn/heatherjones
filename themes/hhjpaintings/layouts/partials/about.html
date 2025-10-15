@@ -1,0 +1,22 @@
+{{ $image := "" }}
+{{ $featuredImageAlt := "" }}
+<main id="about" class="pb-5">
+  <div class="container">
+    {{ partial "breadcrumbs.html" . }}
+    {{ with site.Data.about }}
+      {{ if .featured_image_alt }}
+        {{ $featuredImageAlt = .featured_image_alt }}
+      {{ end }}
+      <div class="row my-5">
+        <div class="col-lg-6 mx-lg-auto">
+          <h1 id="about-label" class="muse display-4 mb-4">{{ .heading }}</h1>
+          {{ with .featured_image }}
+            {{ $image = resources.Get . }}
+            <img class="img-fluid mb-4" src='{{ ( $image.Fit "960x640 Center" ).RelPermalink }}' alt="{{ $featuredImageAlt }}" />
+          {{ end }}
+          <p>{{ .body }}</p>
+        </div>
+      </div>
+    {{ end }}
+  </div>
+</main>
