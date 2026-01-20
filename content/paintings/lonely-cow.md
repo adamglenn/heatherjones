@@ -6,5 +6,6 @@ featured_image: /img/lonely-cow.jpg
 height: 20
 width: 16
 private: true
-price: 550
+price: 0
+sold: true
 ---
