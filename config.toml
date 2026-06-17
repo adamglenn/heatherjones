@@ -13,3 +13,8 @@ timeout = '120s'
   [caches.images]
     dir = ':cacheDir/:project'
     maxAge = "800h"
+
+[module]
+  [[module.mounts]]
+    source = assets/img
+    target = static/img
