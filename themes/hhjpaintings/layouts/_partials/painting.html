@@ -10,7 +10,9 @@
 {{ end }}
 <div class="col-lg-6 col-xl-4 mb-4">
   {{ if .Params.featured_image }}
-    {{ $image = resources.Get .Params.featured_image }}
+    {{ if .Params.featured_image }}
+      {{ $image = resources.Get .Params.featured_image }}
+    {{ end }}
     {{ with resources.Get $image }}
       {{ $imageHeight = float .Height }}
       {{ $imageWidth = float .Width }}
@@ -19,7 +21,9 @@
     {{ end }}
     <div class="position-relative ag-cursor" data-bs-toggle="modal" data-bs-target="#{{ $slug }}-modal">
       <div class="position-relative mb-2 ratio" style="--bs-aspect-ratio: {{ $imageRatio }}%">
-        <img alt="Painting of {{ $title }}" loading="lazy" class="w-100" src='{{ ( $image.Fit "960x640 Center" ).RelPermalink }}' />
+        {{ if $image }}
+          <img alt="Painting of {{ $title }}" loading="lazy" class="w-100" src='{{ ( $image.Fit "960x640 Center" ).RelPermalink }}' />
+        {{ end }}
       </div>
       {{ if or (ne .Params.sold true) (ne .Params.price 0) }}
         {{ if ne .Params.price 0 }}
@@ -63,9 +67,11 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          {{ with .Params.featured_image }}
-            {{ $image = resources.Get . }}
-            <img loading="lazy" class="w-100" src='{{ ( $image.Fit "2000x2000 Center" ).RelPermalink }}' />
+          {{ if .Params.featured_image }}
+            {{ $image = resources.Get .Params.featured_image }}
+            {{ if $image }}
+              <img loading="lazy" class="w-100" src='{{ ( $image.Fit "2000x2000 Center" ).RelPermalink }}' />
+            {{ end }}
           {{ end }}
         </div>
       </div>

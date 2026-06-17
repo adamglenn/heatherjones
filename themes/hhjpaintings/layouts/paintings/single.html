@@ -9,7 +9,9 @@
         {{ $image = resources.Get .Params.featured_image }}
         <div class="row">
           <div class="col-xl-8 mb-4 mb-xl-0">
-            <img class="w-100 shadow-lg" src='{{ ( $image.Fit "2000x2000 Center" ).RelPermalink }}' alt="" />
+            {{ if $image }}
+              <img class="w-100 shadow-lg" src='{{ ( $image.Fit "2000x2000 Center" ).RelPermalink }}' alt="" />
+            {{ end }}
           </div>
           <div class="col-xl-4">
             <p>
