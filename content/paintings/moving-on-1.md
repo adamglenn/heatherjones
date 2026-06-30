@@ -1,0 +1,10 @@
+---
+title: Moving On
+draft: false
+date: 2026-06-30T10:47:00.000-04:00
+featured_image: /img/moving-on.jpg
+height: 30
+width: 24
+private: false
+price: 1200
+---
