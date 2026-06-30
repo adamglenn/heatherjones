@@ -8,5 +8,5 @@ collections:
 height: 16
 width: 20
 private: true
-price: 750
+price: 0
 ---
