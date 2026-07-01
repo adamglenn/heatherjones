@@ -6,5 +6,5 @@ featured_image: /img/donkey-and-barn.jpg
 height: 20
 width: 20
 private: true
-price: 600
+price: 0
 ---
