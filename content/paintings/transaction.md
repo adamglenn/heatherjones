@@ -6,5 +6,5 @@ featured_image: /img/transaction.jpg
 height: 9
 width: 12
 private: true
-price: 400
+price: 0
 ---
