@@ -47,10 +47,11 @@ collections:
     slug: "{{slug}}"
     editor:
       preview: false
-    sortable_fields: ['date', 'title']
+    sortable_fields: ['date', 'title', 'weight']
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Draft', name: 'draft', widget: 'boolean', default: true, required: true }
+      - { label: 'Order', name: 'weight', widget: number, required: false }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Image', name: 'featured_image', widget: 'image' }
       - { label: 'Image Alt Text', name: 'featured_image_alt', widget: 'text', required: false }

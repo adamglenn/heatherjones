@@ -31,9 +31,6 @@
               {{ end }}
             </p>
             {{ if ne .Params.sold true }}
-              {{ if ne .Params.price 0 }}
-                <p class="h2 muse mb-3">${{ .Params.price }}</p>
-              {{ end }}
               <p>{{ site.Data.settings.commission | markdownify }}</p>
               <div class="mt-4">
                 {{ partial "terms.html" (dict "taxonomy" "collections" "page" .) }}

@@ -9,7 +9,7 @@
       <p class="mb-4">* All paintings are unframed (unless otherwise stated) with no hanging mechanism / hardware.</p>
     {{ end }}
     <div class="row gx-4" data-masonry='{"percentPosition": true }'>
-      {{ range $pages.ByDate.Reverse }}
+      {{ range $pages.ByWeight }}
         {{ partial "painting.html" . }}
       {{ end }}
     </div>
