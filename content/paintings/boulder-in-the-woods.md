@@ -5,6 +5,7 @@ date: 2024-10-01T09:32:00.000Z
 featured_image: /img/boulder.jpg
 collections:
   - trees-and-woods
+  - Private Collection
 height: 20
 width: 16
 private: true

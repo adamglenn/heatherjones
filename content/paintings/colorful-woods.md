@@ -3,6 +3,8 @@ title: Colorful Woods
 draft: false
 date: 2024-12-04T10:09:00.000Z
 featured_image: /img/colorfu-lwoods.jpg
+collections:
+  - Private Collection
 private: true
 price: 0
 ---
