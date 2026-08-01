@@ -7,4 +7,5 @@ height: 24
 width: 30
 private: false
 price: 700
+sold: true
 ---
