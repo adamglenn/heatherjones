@@ -9,5 +9,5 @@ height: 20
 width: 16
 private: true
 price: 0
-sold: true
+sold: false
 ---
