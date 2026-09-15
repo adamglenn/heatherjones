@@ -6,5 +6,6 @@ featured_image: /img/boats.jpg
 framing: Gallery wrapped canvas
 height: 24
 width: 24
+private: true
 price: 950
 ---
