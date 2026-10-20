@@ -1,5 +1,5 @@
 ---
-title: Blue Flowers in Vase on a gray Day
+title: Blue Flowers in Vase
 draft: false
 date: 2026-08-11T11:39:00.000-04:00
 featured_image: /img/grays.jpg
